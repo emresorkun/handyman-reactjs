@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Works = () => {
-  return <div>Completed Works are Here</div>;
-};
+export default function Works() {
+  return <div>Works comes here</div>;
+}
