@@ -1,5 +1,7 @@
 import React from "react";
 
-export default function SingleWork() {
-  return <div>Single Piece of Works will be here</div>;
-}
+const SingleWork = () => {
+  return <div>SingleWork</div>;
+};
+
+export default SingleWork;

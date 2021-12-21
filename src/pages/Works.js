@@ -1,5 +1,7 @@
 import React from "react";
 
-export default function Works() {
-  return <div>Works comes here</div>;
-}
+const Works = () => {
+  return <div>Works says hi from the pages</div>;
+};
+
+export default Works;

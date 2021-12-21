@@ -1,5 +1,11 @@
-import React from "react";
+import React from 'react'
 
-export default function Booking() {
-  return <div>HEllo from Booking</div>;
+ const Booking = () => {
+  return (
+    <div>
+      Booking
+    </div>
+  )
 }
+
+export default Booking
