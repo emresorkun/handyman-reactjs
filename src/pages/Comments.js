@@ -3,56 +3,84 @@ import { Formik, Field, Form } from "formik";
 import CommentsPrint from "../components/CommentsPrint";
 
 const Comments = () => (
-  <div className="comment-section">
+  <>
     <div className="form-container">
-      <h2>What do you think about our services?</h2>
-      <div className="form">
+      <h1 className="form-brand">Tahtadan Tukkan Contact</h1>
+      <div className="form-wrapper">
+        <div className="form-company-info">
+          <h3>Tahtadan Tukkan</h3>
+          <ul>
+            <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
+            <li>05332360818</li>
+            <li>tahtadan@tahtadandukkan.com</li>
+          </ul>
+        </div>
         <Formik
           initialValues={{
             firstName: "",
             lastName: "",
             email: "",
-            message: "",
+            phonenumber: "",
+            comment: "",
           }}
           onSubmit={async (values) => {
-            await new Promise((r) => setTimeout(r, 500));
+            await new Promise((r) => setTimeout(r, 50));
             alert(JSON.stringify(values, null, 2));
             //function yazip bnu firebase1!!!
           }}
         >
-          <Form>
-            <div className="form-input">
-              <label htmlFor="firstName">Name</label>
-              <Field id="firstName" name="firstName" placeholder="Jane" />
-
-              <label htmlFor="lastName">Last-Name</label>
-              <Field id="lastName" name="lastName" placeholder="Doe" />
-
-              <label htmlFor="email">Email</label>
-              <Field
-                id="email"
-                name="email"
-                placeholder="jane@acme.com"
-                type="email"
-              />
-              <label htmlFor="message">Please detail your comments here</label>
-              <Field
-                id="message"
-                name="message"
-                placeholder="LEAVE A LOVE HERE"
-                type="textarea"
-                rows="5"
-              />
-              <button type="submit">Submit</button>
-            </div>
-          </Form>
+          <div className="form-contact">
+            <h3>Did we already met?</h3>
+            <h3>Share what you think about us!</h3>
+            <Form>
+              <div className="form-contact-input">
+                <p>
+                  <label htmlFor="firstName">First Name</label>
+                  <Field id="firstName" name="firstName" placeholder="Jane" />
+                </p>
+                <p>
+                  <label htmlFor="lastName">Last Name</label>
+                  <Field id="lastName" name="lastName" placeholder="Doe" />
+                </p>
+                <p>
+                  <label htmlFor="email">Email</label>
+                  <Field
+                    id="email"
+                    name="email"
+                    placeholder="jane@acme.com"
+                    type="email"
+                  />
+                </p>
+                <p>
+                  <label htmlFor="phonenumber">Mobile</label>
+                  <Field
+                    id="phone"
+                    name="phone"
+                    placeholder="0533 x x x"
+                    type="phone"
+                  />
+                </p>
+                <p className="full">
+                  <label htmlFor="comment">Comments</label>
+                  <Field
+                    id="comment"
+                    name="comment"
+                    placeholder="Please share what your experience with other customers"
+                    type="textarea"
+                    rows="5"
+                  />
+                </p>
+                <p className="full">
+                  <button type="submit">Submit</button>
+                </p>
+              </div>
+            </Form>
+          </div>
         </Formik>
-        <div className="comment-section">
-          <CommentsPrint />
-        </div>
       </div>
     </div>
-  </div>
+    <CommentsPrint />
+  </>
 );
 
 export default Comments;
