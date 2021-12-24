@@ -8,9 +8,9 @@ const ContactForm = () => (
       <div className="form-company-info">
         <h3>Tahtadan Tukkan</h3>
         <ul>
-          <li>Adress comes here</li>
+          <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
           <li>05332360818</li>
-          <li>serkan@tahtadandukkan.com</li>
+          <li>tahtadan@tahtadandukkan.com</li>
         </ul>
       </div>
       <Formik
@@ -18,6 +18,7 @@ const ContactForm = () => (
           firstName: "",
           lastName: "",
           email: "",
+          phonenumber: "",
           message: "",
         }}
         onSubmit={async (values) => {
@@ -27,30 +28,50 @@ const ContactForm = () => (
         }}
       >
         <div className="form-contact">
-          <h3>Email Us</h3>
+          <h3>Any questions?</h3>
+
           <Form>
-            <label htmlFor="firstName">First Name</label>
-            <Field id="firstName" name="firstName" placeholder="Jane" />
-
-            <label htmlFor="lastName">Last Name</label>
-            <Field id="lastName" name="lastName" placeholder="Doe" />
-
-            <label htmlFor="email">Email</label>
-            <Field
-              id="email"
-              name="email"
-              placeholder="jane@acme.com"
-              type="email"
-            />
-            <label htmlFor="message">MESSAGE</label>
-            <Field
-              id="message"
-              name="message"
-              placeholder="LEAVE A LOVE HERE"
-              type="textarea"
-              rows="5"
-            />
-            <button type="submit">Submit</button>
+            <div className="form-contact-input">
+              <p>
+                <label htmlFor="firstName">First Name</label>
+                <Field id="firstName" name="firstName" placeholder="Jane" />
+              </p>
+              <p>
+                <label htmlFor="lastName">Last Name</label>
+                <Field id="lastName" name="lastName" placeholder="Doe" />
+              </p>
+              <p>
+                <label htmlFor="email">Email</label>
+                <Field
+                  id="email"
+                  name="email"
+                  placeholder="jane@acme.com"
+                  type="email"
+                />
+              </p>
+              <p>
+                <label htmlFor="phonenumber">Mobile</label>
+                <Field
+                  id="phone"
+                  name="phone"
+                  placeholder="0533 x x x"
+                  type="phone"
+                />
+              </p>
+              <p className="full">
+                <label htmlFor="message">Message</label>
+                <Field
+                  id="message"
+                  name="message"
+                  placeholder="Ask your questions here"
+                  type="textarea"
+                  rows="5"
+                />
+              </p>
+              <p className="full">
+                <button type="submit">Submit</button>
+              </p>
+            </div>
           </Form>
         </div>
       </Formik>
