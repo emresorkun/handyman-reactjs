@@ -12,11 +12,17 @@ import Works from "./pages/Works";
 import PageNotFound from "./pages/PageNotFound";
 
 import Navbar from "./components/Navbar";
+import Navbar from "./Navbar";
 
 function App() {
   return (
+    <>
       <Router>
-      <Navbar />
+        <div className="content">
+          <div className="nav-container">
+            <Navbari />
+          </div>
+          <div className="routes-container">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/admin" element={<Admin />} />
@@ -27,8 +33,11 @@ function App() {
               <Route exact path="/works/:id" element={<SingleWork />} />
               <Route component={<PageNotFound />} />
             </Routes>
+            
+          </div>
+        </div>
       </Router>
-  
+    </>
   );
 }
 
