@@ -161,3 +161,19 @@ ul {
     flex-basis: 100%;
   }
 }
+
+@media (min-width: 700px) {
+  .form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .form-wrapper > * {
+    padding: 2em;
+  }
+
+  .form-company-info h3,
+  .form-company-info ul,
+  .form-brand {
+    text-align: left;
+  }
+}
