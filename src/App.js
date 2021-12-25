@@ -15,8 +15,11 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
+
       <Router>
+        <div className="container">
       <Navbar />
+      <div className="container-routes">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/admin" element={<Admin />} />
@@ -27,8 +30,10 @@ function App() {
               <Route exact path="/works/:id" element={<SingleWork />} />
               <Route component={<PageNotFound />} />
             </Routes>
+            </div>
+        </div>
       </Router>
-  
+        
   );
 }
 

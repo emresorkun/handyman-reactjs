@@ -67,7 +67,7 @@ ul {
 }
 //NAVIGATOR
 .navbar {
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -176,4 +176,13 @@ ul {
   .form-brand {
     text-align: left;
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-routes {
+  margin-top: 100px;
 }
