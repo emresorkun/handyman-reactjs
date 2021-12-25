@@ -1,7 +1,12 @@
 import React from "react";
+import WorkList from "../components/WorkList";
 
 const Home = () => {
-  return <div>Home Page is working</div>;
+  return (
+    <div className="home">
+      <h1>homepage</h1>
+    </div>
+  );
 };
 
 export default Home;
