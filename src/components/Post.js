@@ -1,13 +1,19 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { marked } from "marked";
 
 const Post = ({ post }) => {
   console.log(post);
-  return <div>
-    {post.fields.title}
-  </div>;
+  const { title, photos, shortDescription, longDescription } = post.fields;
+  const longPostDescription = marked(longDescription);
+  const shortPostDescription = marked(shortDescription);
+  return (
+    <div className="post">
+      <h2 className="title">{title}</h2>
+      {photos && <img className='featuredImage' src={photos[0].fields.file.url} alt={title} title={title} />}
+      <section dangerouslySetInnerHTML={{ __html: shortPostDescription }} />
+      <section dangerouslySetInnerHTML={{ __html: longPostDescription }} />
+    </div>
+  );
 };
-
-Post.propTypes = {};
 
 export default Post;

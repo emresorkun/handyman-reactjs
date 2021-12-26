@@ -1,5 +1,4 @@
 import React from "react";
-import WorkList from "../components/WorkList";
 
 const Home = () => {
   return (

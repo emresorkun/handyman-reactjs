@@ -18,7 +18,7 @@ const ContactForm = () => (
           firstName: "",
           lastName: "",
           email: "",
-          phonenumber: "",
+          phoneNumber: "",
           message: "",
         }}
         onSubmit={async (values) => {
@@ -50,7 +50,7 @@ const ContactForm = () => (
                 />
               </p>
               <p>
-                <label htmlFor="phonenumber">Mobile</label>
+                <label htmlFor="phoneNumber">Mobile</label>
                 <Field
                   id="phone"
                   name="phone"
