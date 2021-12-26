@@ -131,16 +131,19 @@ ul {
 }
 
 .mr-auto {
-  height: 210px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 35px;
 }
 
 .navbar {
-  background-color: rgb(14, 207, 207);
+  background-color: #c9e6ff;
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+  display: grid;
+  place-items: center;
+  align-items: center;
+  margin: 1em;
 }
 
 body {

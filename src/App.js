@@ -8,32 +8,30 @@ import Comments from "./pages/Comments";
 import ContactForm from "./pages/ContactForm";
 import Home from "./pages/Home";
 import SingleWork from "./pages/SingleWork";
-import Works from "./pages/Works";
+import CompletedWorks from "./pages/CompletedWorks";
 import PageNotFound from "./pages/PageNotFound";
 
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
-
-      <Router>
-        <div className="container">
-      <Navbar />
-      <div className="container-routes">
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route exact path="/bookings" element={<Booking />} />
-              <Route exact path="/comments" element={<Comments />} />
-              <Route exact path="/contact-form" element={<ContactForm />} />
-              <Route exact path="/works" element={<Works />} />
-              <Route exact path="/works/:id" element={<SingleWork />} />
-              <Route component={<PageNotFound />} />
-            </Routes>
-            </div>
+    <Router>
+      <div className="container">
+        <Navbar />
+        <div className="container-routes">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route exact path="/bookings" element={<Booking />} />
+            <Route exact path="/comments" element={<Comments />} />
+            <Route exact path="/contact-form" element={<ContactForm />} />
+            <Route exact path="/works" element={<CompletedWorks />} />
+            <Route exact path="/works/:id" element={<SingleWork />} />
+            <Route element={<PageNotFound />} />
+          </Routes>
         </div>
-      </Router>
-        
+      </div>
+    </Router>
   );
 }
 
