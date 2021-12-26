@@ -1,9 +1,9 @@
 import React from "react";
 import { client } from "../client";
 import "../pages/works.scss";
-//import Works from './components/Works'
+import Posts from "../components/Posts";
 
-class CompletedWorks extends React.Component {
+class Works extends React.Component {
   state = {
     works: [],
   };
@@ -12,7 +12,6 @@ class CompletedWorks extends React.Component {
     client
       .getEntries()
       .then((response) => {
-        console.log(response);
         this.setState({
           works: response.items,
         });
@@ -31,7 +30,7 @@ class CompletedWorks extends React.Component {
           </header>
           <main>
             <div className="wrapper">
-              {/* <Posts posts={this.state.articles} /> */}
+              <Posts posts={this.state.works} />
             </div>
           </main>
         </div>
@@ -40,7 +39,7 @@ class CompletedWorks extends React.Component {
   }
 }
 
-export default CompletedWorks;
+export default Works;
 // import React from "react";
 // import { useState } from "react";
 // import WorkList from "../components/WorkList";
