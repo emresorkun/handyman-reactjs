@@ -2,6 +2,8 @@ import { collection, getDocs } from "firebase/firestore";
 import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
+import "antd/dist/antd.css";
+import { Card } from "antd";
 
 export default function CommentsPrint() {
   const [comments, setComments] = useState([]);
@@ -19,10 +21,17 @@ export default function CommentsPrint() {
     <div className="comments-container">
       {comments.map((comment) => {
         return (
-          <div>
-            {" "}
-            <h1>Name: {comment.firstName}</h1>
-            <h1>Comment: {comment.comment}</h1>
+          <div className="comments">
+            <div className="site-card-border-less-wrapper">
+              <Card
+                title={comment.firstName}
+                bordered={true}
+                style={{ width: 300 }}
+              >
+                {" "}
+                <div>{comment.comment}</div>
+              </Card>
+            </div>
           </div>
         );
       })}

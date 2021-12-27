@@ -4,6 +4,7 @@ import CommentsPrint from "../components/CommentsPrint";
 
 const Comments = () => (
   <>
+  <CommentsPrint />
     <div className="form-container">
       <h1 className="form-brand">Tahtadan Tukkan Contact</h1>
       <div className="form-wrapper">
@@ -79,7 +80,7 @@ const Comments = () => (
         </Formik>
       </div>
     </div>
-    <CommentsPrint />
+    
   </>
 );
 

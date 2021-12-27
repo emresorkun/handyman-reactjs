@@ -10,8 +10,7 @@ body {
   color: #455;
   line-height: 1.5;
   font-family: "Muli", sans-serif;
-  background-color: blueviolet;
-  //background-image: url(./images/bg.png);
+  background-image: url(../images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -81,6 +80,7 @@ main .wrapper {
 
 .title {
   text-transform: uppercase;
+  text-align: center;
   font-size: 1.8em;
-  color: #f32e67;
+  color: #1b93d7;
 }
