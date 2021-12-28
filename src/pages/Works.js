@@ -25,7 +25,7 @@ class Works extends React.Component {
         <div className="container">
           <header>
             <div className="wrapper">
-              <span className="logo">React and Contentful</span>
+              <span className="logo">Some Of Our Completed Works</span>
             </div>
           </header>
           <main>

@@ -4,12 +4,12 @@ import { initializeApp } from "@firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: "AIzaSyDh_COdB4Z4T-rp2vw80TkS7Q1icg7fF7k",
   authDomain: "tahtadan-tukkan.firebaseapp.com",
   projectId: "tahtadan-tukkan",
   storageBucket: "tahtadan-tukkan.appspot.com",
   messagingSenderId: "574836843125",
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  appId: "1:574836843125:web:7440e4e20eb1f989334e3c",
   measurementId: "G-14TN7RW24G",
 };
 
