@@ -1,29 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Field, Form } from "formik";
 import CommentsPrint from "../components/CommentsPrint";
 import { db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 
-const createComment = async () => {
-  //await setDoc(doc(db, "tehtadan-tukkan", "comments"), {
-  db.collection("comments")
-    .doc("newDoc")
-    .set({
-      comment: "rest",
-      email: "karolina@test",
-      firstName: "karo",
-      lastName: "hanss",
-      phoneNumber: "056633322",
-    })
-    .then(() => {
-      console.log("succes");
-    })
-    .catch((error) => {
-      console.log("NOOOOO");
-    });
-};
+const commentsCollectionRef = collection(db, "comments");
+
+// const createComment = async (values) => {
+// await addDoc(commentsCollectionRef, values)
+// //Values ;(
+// }
+//let createComment = {};
+function createComment() {
+  return
+}
 function Comments() {
+  useEffect(() => {
+    const createComment = async (values) => {
+      await addDoc(commentsCollectionRef, values);
+    };
+
+    //console.log(createComment().then((e) => console.log(e)));
+    //yukardaki console=>ne oluyor anlamak icin
+  }, []);
+
   return (
     <>
       <CommentsPrint />
@@ -47,8 +48,10 @@ function Comments() {
               comment: "",
             }}
             onSubmit={async (values) => {
-              await new Promise((r) => setTimeout(r, 50));
-              console.log(values);
+              //orignal filedan gelenler asagidaki iki satir
+              //await new Promise((r) => setTimeout(r, 50));
+              //console.log(values);
+              await addDoc(commentsCollectionRef, values);
 
               //alert(JSON.stringify(values, null, 2));
               //function yazip bnu firebase1!!!

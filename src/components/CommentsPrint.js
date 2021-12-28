@@ -13,6 +13,7 @@ export default function CommentsPrint() {
     const getComments = async () => {
       const data = await getDocs(commentsCollectionRef);
       setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      console.log(comments);
     };
 
     getComments();
@@ -21,7 +22,7 @@ export default function CommentsPrint() {
     <div className="comments-container">
       {comments.map((comment) => {
         return (
-          <div className="comments">
+          <div className="comments" key={comment.id}>
             <div className="site-card-border-less-wrapper">
               <Card
                 title={comment.firstName}

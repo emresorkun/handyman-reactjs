@@ -16,7 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 //firebase.initializeApp(firebaseConfig);
-
+//  var commentsRef= firebase.database()
 //const projectFireStore =firebase.firestore();
-
+  
 export const db = getFirestore(app);
