@@ -13,7 +13,7 @@ const commentsCollectionRef = collection(db, "comments");
 // }
 //let createComment = {};
 function createComment() {
-  return
+  return;
 }
 function Comments() {
   useEffect(() => {
