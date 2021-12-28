@@ -3,7 +3,26 @@ import { Formik, Field, Form } from "formik";
 import CommentsPrint from "../components/CommentsPrint";
 import { db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
+import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
+
+const CommentsSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(25, "Too Long!")
+    .required("Required"),
+  lastName: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
+  comment: Yup.string()
+    .min(5, "Please a little longer!! (min 5 characters..)")
+    .max(155, "Too Long!")
+    .required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  // phoneNumber: Yup.number()
+  //   .min(9, "Too Short!")
+  //   .max(15, "Too Long!")
+  //   .phoneNumber("Invalid Phone Number")
+  //   .required("Required"),
+});
 
 const commentsCollectionRef = collection(db, "comments");
 
@@ -47,6 +66,7 @@ function Comments() {
               phoneNumber: "",
               comment: "",
             }}
+            validationSchema={CommentsSchema}
             onSubmit={async (values) => {
               //orignal filedan gelenler asagidaki iki satir
               //await new Promise((r) => setTimeout(r, 50));
@@ -57,60 +77,79 @@ function Comments() {
               //function yazip bnu firebase1!!!
             }}
           >
-            <div className="form-contact">
+            {/* <div className="form-contact">
               <h3>Did we already met?</h3>
-              <h3>Share what you think about us!</h3>
-              <Form>
-                <div className="form-contact-input">
-                  <p>
-                    <label htmlFor="firstName">First Name</label>
-                    <Field
-                      id="firstName"
-                      name="firstName"
-                      placeholder="Jane"
-                      type="firstName"
-                    />
-                  </p>
-                  <p>
-                    <label htmlFor="lastName">Last Name</label>
-                    <Field id="lastName" name="lastName" placeholder="Doe" />
-                  </p>
-                  <p>
-                    <label htmlFor="email">Email</label>
-                    <Field
-                      id="email"
-                      name="email"
-                      placeholder="jane@acme.com"
-                      type="email"
-                    />
-                  </p>
-                  <p>
-                    <label htmlFor="phoneNumber">Mobile</label>
-                    <Field
-                      id="phoneNumber"
-                      name="phoneNumber"
-                      placeholder="0533 x x x"
-                      type="phoneNumber"
-                    />
-                  </p>
-                  <p className="full">
-                    <label htmlFor="comment">Comments</label>
-                    <Field
-                      id="comment"
-                      name="comment"
-                      placeholder="Please share what your experience with other customers"
-                      type="textarea"
-                      rows="5"
-                    />
-                  </p>
-                  <p className="full">
-                    <button type="submit" onClick={createComment}>
-                      Submit
-                    </button>
-                  </p>
-                </div>
-              </Form>
-            </div>
+              <h3>Share what you think about us!</h3> */}
+            {({ errors, touched }) => (
+              <div className="form-contact">
+                <Form>
+                  <div className="form-contact-input">
+                    <p>
+                      <label htmlFor="firstName">First Name</label>
+                      <Field
+                        id="firstName"
+                        name="firstName"
+                        placeholder="Jane"
+                        type="firstName"
+                      />
+                      {errors.firstName && touched.firstName ? (
+                        <div>{errors.firstName}</div>
+                      ) : null}
+                    </p>
+                    <p>
+                      <label htmlFor="lastName">Last Name</label>
+                      <Field id="lastName" name="lastName" placeholder="Doe" />
+                      {errors.lastName && touched.lastName ? (
+                        <div>{errors.lastName}</div>
+                      ) : null}
+                    </p>
+                    <p>
+                      <label htmlFor="email">Email</label>
+                      <Field
+                        id="email"
+                        name="email"
+                        placeholder="jane@acme.com"
+                        type="email"
+                      />
+                      {errors.email && touched.email ? (
+                        <div>{errors.email}</div>
+                      ) : null}
+                    </p>
+                    <p>
+                      <label htmlFor="phoneNumber">Mobile</label>
+                      <Field
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="0533 ..."
+                        type="phoneNumber"
+                      />
+                      {errors.phoneNumber && touched.phoneNumber ? (
+                        <div>{errors.phoneNumber}</div>
+                      ) : null}
+                    </p>
+                    <p className="full">
+                      <label htmlFor="comment">Comments</label>
+                      <Field
+                        id="comment"
+                        name="comment"
+                        placeholder="Please share what your experience with other customers"
+                        type="textarea"
+                        rows="5"
+                      />
+                      {errors.comment && touched.comment ? (
+                        <div>{errors.comment}</div>
+                      ) : null}
+                    </p>
+                    <p className="full">
+                      <button type="submit" onClick={createComment}>
+                        Submit
+                      </button>
+                    </p>
+                  </div>
+                </Form>
+              </div>
+            )}
+            {/* </div> */}
           </Formik>
         </div>
       </div>
