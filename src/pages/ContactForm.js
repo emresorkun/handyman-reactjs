@@ -3,8 +3,8 @@ import { Formik, Field, Form } from "formik";
 
 const ContactForm = () => (
   <div className="form-container">
-    <h1 className="form-brand">Tahtadan Tukkan Contact</h1>
     <div className="form-wrapper">
+      
       <div className="form-company-info">
         <h3>Tahtadan Tukkan</h3>
         <ul>
