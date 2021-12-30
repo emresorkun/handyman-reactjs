@@ -1,9 +1,11 @@
 import React from 'react'
-
+import CommentsPrint from '../components/CommentsPrint'
  const Admin = () => {
   return (
+    
     <div>
-      ADMIN PAGES
+    <CommentsPrint 
+    />
     </div>
   )
 }

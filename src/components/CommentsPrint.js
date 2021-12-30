@@ -7,6 +7,7 @@ import { Card, List } from "antd";
 
 export default function CommentsPrint() {
   const [comments, setComments] = useState([]);
+  const [adminButton, setadminButton] = useState("display");
   const commentsCollectionRef = collection(db, "comments");
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function CommentsPrint() {
   return (
     <div className="comments-container">
       <header>
-        <div className="wrapper">
+        <div className="logo-wrapper">
           <span className="logo">Comments from our Customers</span>
         </div>
       </header>
@@ -69,17 +70,24 @@ export default function CommentsPrint() {
                   bordered={true}
                   style={{ width: 500 }}
                   headStyle={{
-                    backgroundColor: "#24a513",
-                    border: 0,
+                    //backgroundColor: "#6B8E23",
+                    backgroundColor: "#A87C60",
                   }}
                   bodyStyle={{
-                    backgroundColor: "#db9020",
-                    border: 0,
+                    //backgroundColor: "#B4C424",#C76E32
+                    backgroundColor: "#C76E32",
                   }}
                 >
                   {" "}
                   <div>{item.comment}</div>
                 </Card>
+                <button
+                  type="submit"
+                  onClick={console.log("clickadsasdasd")}
+                  style={{ display: "none" }}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </List.Item>

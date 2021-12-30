@@ -66,17 +66,15 @@ function ContactForm() {
             }}
             validationSchema={ContactsSchema}
             onSubmit={async (values) => {
-      
               await addDoc(contactsCollectionRef, values);
             }}
           >
-            
             {({ errors, touched }) => (
               <div className="form-contact">
                 <Form>
                   <div className="form-contact-input">
                     <p>
-                      <label htmlFor="firstName">First Name</label>
+                      <label htmlFor="firstName">Name</label>
                       <Field
                         id="firstName"
                         name="firstName"
@@ -84,14 +82,14 @@ function ContactForm() {
                         type="firstName"
                       />
                       {errors.firstName && touched.firstName ? (
-                        <div>{errors.firstName}</div>
+                        <div className="errors-input">{errors.firstName}</div>
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="lastName">Last Name</label>
+                      <label htmlFor="lastName">Surname</label>
                       <Field id="lastName" name="lastName" placeholder="Doe" />
                       {errors.lastName && touched.lastName ? (
-                        <div>{errors.lastName}</div>
+                        <div className="errors-input">{errors.lastName}</div>
                       ) : null}
                     </p>
                     <p>
@@ -103,7 +101,7 @@ function ContactForm() {
                         type="email"
                       />
                       {errors.email && touched.email ? (
-                        <div>{errors.email}</div>
+                        <div className="errors-input">{errors.email}</div>
                       ) : null}
                     </p>
                     <p>
@@ -115,7 +113,7 @@ function ContactForm() {
                         type="phoneNumber"
                       />
                       {errors.phoneNumber && touched.phoneNumber ? (
-                        <div>{errors.phoneNumber}</div>
+                        <div className="errors-input">{errors.phoneNumber}</div>
                       ) : null}
                     </p>
                     <p className="full">
@@ -123,12 +121,12 @@ function ContactForm() {
                       <Field
                         id="message"
                         name="message"
-                        placeholder="Please share what your experience with other customers"
+                        placeholder="Any questions?"
                         type="textarea"
                         rows="5"
                       />
                       {errors.message && touched.message ? (
-                        <div>{errors.message}</div>
+                        <div className="errors-input">{errors.message}</div>
                       ) : null}
                     </p>
                     <p className="full">

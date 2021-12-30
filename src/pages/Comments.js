@@ -13,7 +13,7 @@ const CommentsSchema = Yup.object().shape({
     .required("Required"),
   lastName: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
   comment: Yup.string()
-    .min(5, "Please a little longer!! (min 5 characters..)")
+    .min(5, "Comments should be longer (min 5 characters..)")
     .max(155, "Too Long!")
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
@@ -48,16 +48,15 @@ function Comments() {
     <>
       <CommentsPrint />
       <div className="form-container">
-        <h1 className="form-brand">Tahtadan Tukkan Contact</h1>
+        <h1 className="form-brand">Share Your Comments With Us!</h1>
         <div className="form-wrapper">
-          <div className="form-company-info">
-            <h3>Tahtadan Tukkan</h3>
+          {/* <div className="form-company-info">
             <ul>
               <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
               <li>05332360818</li>
               <li>tahtadan@tahtadandukkan.com</li>
             </ul>
-          </div>
+          </div> */}
           <Formik
             initialValues={{
               firstName: "",
@@ -85,7 +84,12 @@ function Comments() {
                 <Form>
                   <div className="form-contact-input">
                     <p>
-                      <label htmlFor="firstName">First Name</label>
+                      <label
+                        htmlFor="firstName"
+                        className="form-contact-input-header"
+                      >
+                        Name
+                      </label>
                       <Field
                         id="firstName"
                         name="firstName"
@@ -93,18 +97,28 @@ function Comments() {
                         type="firstName"
                       />
                       {errors.firstName && touched.firstName ? (
-                        <div>{errors.firstName}</div>
+                        <div className="errors-input">{errors.firstName}</div>
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="lastName">Last Name</label>
+                      <label
+                        htmlFor="lastName"
+                        className="form-contact-input-header"
+                      >
+                        Surname
+                      </label>
                       <Field id="lastName" name="lastName" placeholder="Doe" />
                       {errors.lastName && touched.lastName ? (
-                        <div>{errors.lastName}</div>
+                        <div className="errors-input">{errors.lastName}</div>
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="email">Email</label>
+                      <label
+                        htmlFor="email"
+                        className="form-contact-input-header"
+                      >
+                        Email
+                      </label>
                       <Field
                         id="email"
                         name="email"
@@ -112,11 +126,16 @@ function Comments() {
                         type="email"
                       />
                       {errors.email && touched.email ? (
-                        <div>{errors.email}</div>
+                        <div className="errors-input">{errors.email}</div>
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="phoneNumber">Mobile</label>
+                      <label
+                        htmlFor="phoneNumber"
+                        className="form-contact-input-header"
+                      >
+                        Mobile
+                      </label>
                       <Field
                         id="phoneNumber"
                         name="phoneNumber"
@@ -124,11 +143,16 @@ function Comments() {
                         type="phoneNumber"
                       />
                       {errors.phoneNumber && touched.phoneNumber ? (
-                        <div>{errors.phoneNumber}</div>
+                        <div className="errors-input">{errors.phoneNumber}</div>
                       ) : null}
                     </p>
                     <p className="full">
-                      <label htmlFor="comment">Comments</label>
+                      <label
+                        htmlFor="comment"
+                        className="form-contact-input-header"
+                      >
+                        Comments
+                      </label>
                       <Field
                         id="comment"
                         name="comment"
@@ -137,7 +161,7 @@ function Comments() {
                         rows="5"
                       />
                       {errors.comment && touched.comment ? (
-                        <div>{errors.comment}</div>
+                        <div className="errors-input">{errors.comment}</div>
                       ) : null}
                     </p>
                     <p className="full">

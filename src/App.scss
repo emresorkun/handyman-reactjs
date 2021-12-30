@@ -16,28 +16,51 @@
 .form-company-info ul {
   list-style: none;
   padding: 0;
+  
 }
 
 .form-company-info {
-  background: #db9020;
+  //background: #c76e32;
 }
 
 .form-company-info h3,
-ul {
+ul, .form-contact-input-header {
   text-align: center;
   margin: 0 0 1rem 0;
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #1f0704;
+  
+}
+
+.form-contact-input-header {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #1f0704;
+  
 }
 
 .form-contact {
-  background: #ffaa2b;
+  //background: #a87c60;
+  
+  
 }
 
 .form-brand {
   text-align: center;
+  color: #1f0704;
+  line-height: 40px;
+  font-size: 36px;
+  font-weight: 900;
+  
 }
 
-.form-wrapper {
-  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+.form-er {
+  box-shadow: 0 0 20px 0 #1f0704;
 }
 
 .form-wrapper > * {
@@ -68,21 +91,21 @@ ul {
 .form-contact-input textarea {
   width: 100%;
   padding: 1em;
-  border: 1px solid #db9020;
+  border: 1px solid #c76e32;
 }
 
 .form-contact-input button {
-  background: #db9020;
+  background: #c76e32;
   border: 0;
   text-transform: uppercase;
 }
 
 .form-contact-input button:hover,
 .form-contact-input button:focus {
-  background: #24a513;
-  color: #051d22;
+  background: #1f0704;
+  color: #c76e32;
   outline: 0;
-  transition: background-color 2s ease-out;
+  transition: background-color 1s ease-out;
 }
 
 // CONTACT-comments FORM
@@ -138,8 +161,8 @@ ul {
 }
 
 .navbar {
-  background-color: #db8b13;
-  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+  background-color: #c76e32;
+  box-shadow: 1px 0 20px 0 #1f0704;
   display: grid;
   place-items: center;
   align-items: center;
@@ -147,28 +170,30 @@ ul {
 }
 
 body {
-  background: #db8b13;
-  color: #485e74;
-  line-height: 1.6;
+  color: #1f0704;
+  line-height: 1.5;
+  font-family: "Muli", sans-serif;
+  background-image: url(./images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background-position: center 200px;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 1em;
 }
 
-body {
-  color: #455;
-  line-height: 1.5;
-  font-family: "Muli", sans-serif;
-  background-image: url(./images/bg2.png);
-  background-repeat: no-repeat;
-  //background-size: cover;
-  background-position: center 200px;
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 .nav-link {
-  font-size: large;
+  font-size: x-large;
+  color: #1f0704;
+  line-height: 80px;
+  font-size: 24px;
+  font-weight: 800;
 }
 
-
+.errors-input {
+  color: red;
+  font-weight: 1000;
+  font-size: 18px;
+}
