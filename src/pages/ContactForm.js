@@ -49,7 +49,6 @@ function ContactForm() {
         <h1 className="form-brand">Tahtadan Tukkan Contact</h1>
         <div className="form-wrapper">
           <div className="form-company-info">
-            <h3>Tahtadan Tukkan</h3>
             <ul>
               <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
               <li>05332360818</li>
