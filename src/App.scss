@@ -19,7 +19,7 @@
 }
 
 .form-company-info {
-  background: #c9e6ff;
+  background: #db9020;
 }
 
 .form-company-info h3,
@@ -29,7 +29,7 @@ ul {
 }
 
 .form-contact {
-  background: #f9feff;
+  background: #ffaa2b;
 }
 
 .form-brand {
@@ -68,19 +68,19 @@ ul {
 .form-contact-input textarea {
   width: 100%;
   padding: 1em;
-  border: 1px solid #c9e6ff;
+  border: 1px solid #db9020;
 }
 
 .form-contact-input button {
-  background: #c9e6ff;
+  background: #db9020;
   border: 0;
   text-transform: uppercase;
 }
 
 .form-contact-input button:hover,
 .form-contact-input button:focus {
-  background: #92bde7;
-  color: #f9feff;
+  background: #24a513;
+  color: #051d22;
   outline: 0;
   transition: background-color 2s ease-out;
 }
@@ -138,7 +138,7 @@ ul {
 }
 
 .navbar {
-  background-color: #c9e6ff;
+  background-color: #db8b13;
   box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
   display: grid;
   place-items: center;
@@ -147,13 +147,28 @@ ul {
 }
 
 body {
-  background: #92bde7;
+  background: #db8b13;
   color: #485e74;
   line-height: 1.6;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 1em;
 }
 
+body {
+  color: #455;
+  line-height: 1.5;
+  font-family: "Muli", sans-serif;
+  background-image: url(./images/bg2.png);
+  background-repeat: no-repeat;
+  //background-size: cover;
+  background-position: center 200px;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .nav-link {
   font-size: large;
 }
+
+

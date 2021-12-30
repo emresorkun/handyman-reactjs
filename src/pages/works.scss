@@ -6,18 +6,7 @@
   padding: 0;
 }
 
-body {
-  color: #455;
-  line-height: 1.5;
-  font-family: "Muli", sans-serif;
-  background-image: url(../images/bg.png);
-  background-position: center;
-  background-size: cover;
-  background-position: 0 0;
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 
 h1,
 h2,
@@ -71,7 +60,7 @@ header {
   text-align: center;
   // color: rgba(0, 0, 0, 0.55);
   // box-shadow: 0 0 10px 0 rgba(72, 94, 116, 0.7);
-  background-color: #c9e6ff;
+  background-color:  #db8b13;
   box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
   display: grid;
   place-items: center;

@@ -19,12 +19,12 @@ export default function CommentsPrint() {
     getComments();
   }, []);
   return (
-    <div className="comments-container" >
-       <header >
-            <div className="wrapper">
-              <span className="logo">Comments from our Customers</span>
-            </div>
-          </header>
+    <div className="comments-container">
+      <header>
+        <div className="wrapper">
+          <span className="logo">Comments from our Customers</span>
+        </div>
+      </header>
       {/* {comments.map((comment) => {
         return (
           <div className="comments" key={comment.id}>
@@ -54,16 +54,28 @@ export default function CommentsPrint() {
         dataSource={comments}
         renderItem={(item) => (
           <List.Item>
-      
             <div className="comments" key={item.id}>
               <div
                 className="site-card-border-less-wrapper"
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  margin: "12px",
+                }}
               >
                 <Card
+                  className="card"
                   title={item.firstName}
                   bordered={true}
                   style={{ width: 500 }}
+                  headStyle={{
+                    backgroundColor: "#24a513",
+                    border: 0,
+                  }}
+                  bodyStyle={{
+                    backgroundColor: "#db9020",
+                    border: 0,
+                  }}
                 >
                   {" "}
                   <div>{item.comment}</div>

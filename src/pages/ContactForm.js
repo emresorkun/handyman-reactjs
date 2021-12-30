@@ -66,18 +66,11 @@ function ContactForm() {
             }}
             validationSchema={ContactsSchema}
             onSubmit={async (values) => {
-              //orignal filedan gelenler asagidaki iki satir
-              //await new Promise((r) => setTimeout(r, 50));
-              //console.log(values);
+      
               await addDoc(contactsCollectionRef, values);
-
-              //alert(JSON.stringify(values, null, 2));
-              //function yazip bnu firebase1!!!
             }}
           >
-            {/* <div className="form-contact">
-              <h3>Did we already met?</h3>
-              <h3>Share what you think about us!</h3> */}
+            
             {({ errors, touched }) => (
               <div className="form-contact">
                 <Form>
