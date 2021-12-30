@@ -50,13 +50,13 @@ function Comments() {
       <div className="form-container">
         <h1 className="form-brand">Share Your Comments With Us!</h1>
         <div className="form-wrapper">
-          {/* <div className="form-company-info">
+          <div className="form-company-info">
             <ul>
               <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
               <li>05332360818</li>
               <li>tahtadan@tahtadandukkan.com</li>
             </ul>
-          </div> */}
+          </div>
           <Formik
             initialValues={{
               firstName: "",

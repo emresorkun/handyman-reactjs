@@ -74,7 +74,12 @@ function ContactForm() {
                 <Form>
                   <div className="form-contact-input">
                     <p>
-                      <label htmlFor="firstName">Name</label>
+                      <label
+                        htmlFor="firstName"
+                        className="form-contact-input-header"
+                      >
+                        Name
+                      </label>
                       <Field
                         id="firstName"
                         name="firstName"
@@ -86,14 +91,24 @@ function ContactForm() {
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="lastName">Surname</label>
+                      <label
+                        htmlFor="lastName"
+                        className="form-contact-input-header"
+                      >
+                        Surname
+                      </label>
                       <Field id="lastName" name="lastName" placeholder="Doe" />
                       {errors.lastName && touched.lastName ? (
                         <div className="errors-input">{errors.lastName}</div>
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="email">Email</label>
+                      <label
+                        htmlFor="email"
+                        className="form-contact-input-header"
+                      >
+                        Email
+                      </label>
                       <Field
                         id="email"
                         name="email"
@@ -105,7 +120,12 @@ function ContactForm() {
                       ) : null}
                     </p>
                     <p>
-                      <label htmlFor="phoneNumber">Mobile</label>
+                      <label
+                        htmlFor="phoneNumber"
+                        className="form-contact-input-header"
+                      >
+                        Mobile
+                      </label>
                       <Field
                         id="phoneNumber"
                         name="phoneNumber"
@@ -117,7 +137,12 @@ function ContactForm() {
                       ) : null}
                     </p>
                     <p className="full">
-                      <label htmlFor="message">Message</label>
+                      <label
+                        htmlFor="message"
+                        className="form-contact-input-header"
+                      >
+                        Message
+                      </label>
                       <Field
                         id="message"
                         name="message"
