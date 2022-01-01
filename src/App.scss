@@ -237,3 +237,16 @@ body {
 // .home-photo img {
 //   padding: 50px;
 // }
+
+.datepicker-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.datepicker {
+  background-color: #c76e32;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
