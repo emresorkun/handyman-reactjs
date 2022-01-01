@@ -19,25 +19,26 @@ class Works extends React.Component {
         });
       })
       .catch(console.error);
-      
   }
 
   render() {
     return (
-      <div className="Works">
-        <div className="container">
-          <header>
-            <div className="wrapper">
-              <span className="logo">Some Of Our Completed Works</span>
-            </div>
-          </header>
-          <main>
-            <div className="wrapper">
-              <Posts posts={this.state.works} />
-            </div>
-          </main>
+      <>
+        <header>
+          <div className="wrapper">
+            <span className="logo">Some Of Our Completed Works</span>
+          </div>
+        </header>
+        <div className="Works">
+          <div className="container">
+            <main>
+              <div className="wrapper">
+                <Posts posts={this.state.works} />
+              </div>
+            </main>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

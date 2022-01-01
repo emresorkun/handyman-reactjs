@@ -3,8 +3,12 @@ import React from "react";
 const Home = () => {
   return (
     <>
+      <header>
+        <div className="wrapper">
+          <span className="logo">This is My Story</span>
+        </div>
+      </header>
       <div className="home-container">
-        <h1 className="home-brand">This is My Story</h1>
         <div className="home-wrapper">
           <div className="home-introduction">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime

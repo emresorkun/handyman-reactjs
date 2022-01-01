@@ -58,13 +58,14 @@ header {
   text-align: center;
   // color: rgba(0, 0, 0, 0.55);
   // box-shadow: 0 0 10px 0 rgba(72, 94, 116, 0.7);
-  background-color: #c76e32;
+  background-color: #1f0704;
   box-shadow: 0 0 20px 0 #1f0704;
   display: grid;
   place-items: center;
   align-items: center;
   margin: 1em;
   margin-bottom: 20px;
+  width: 98%;
 }
 
 .logo-wrapper {
@@ -78,7 +79,7 @@ header {
   line-height: 60px;
   font-size: 34px;
   font-weight: 700;
-  color: #1f0704;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 main .wrapper {

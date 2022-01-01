@@ -45,8 +45,12 @@ function ContactForm() {
 
   return (
     <>
+      <header>
+        <div className="wrapper">
+          <h1 className="logo">Drop us a Line!</h1>
+        </div>
+      </header>
       <div className="form-container">
-        <h1 className="form-brand">Tahtadan Tukkan Contact</h1>
         <div className="form-wrapper">
           <div className="form-company-info">
             <ul>
