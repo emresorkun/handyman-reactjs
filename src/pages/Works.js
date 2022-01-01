@@ -10,13 +10,16 @@ class Works extends React.Component {
 
   componentDidMount() {
     client
-      .getEntries()
+      .getEntries({
+        content_type: "completedJobs",
+      })
       .then((response) => {
         this.setState({
           works: response.items,
         });
       })
       .catch(console.error);
+      
   }
 
   render() {

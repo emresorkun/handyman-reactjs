@@ -12,7 +12,7 @@ export default function Navibar() {
           <Nav.Link href="comments">Your Comments</Nav.Link>
           <Nav.Link href="bookings">Book your Carpenter</Nav.Link>
           <Nav.Link href="works">Completed Works</Nav.Link>
-          <Nav.Link href="admin">Carpenter Login</Nav.Link>
+          <Nav.Link href="admin">Login</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

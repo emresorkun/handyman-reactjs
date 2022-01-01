@@ -12,11 +12,25 @@
   justify-content: center;
   align-items: center;
 }
-
+.home-container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+.home-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.home-wrapper > * {
+  padding: 1em;
+}
 .form-company-info ul {
   list-style: none;
   padding: 0;
-  
 }
 
 .form-company-info {
@@ -24,20 +38,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-
+.home-introduction {
+  //background: #c76e32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(5, 2, 19);
+  font-weight: 1000;
+  font-size: 24px;
+  padding: 50px;
+}
 .form-company-info h3,
-ul, .form-contact-input-header {
-  text-align: center;
-  margin: 0 0 1rem 0;
-  line-height: 40px;
-  font-size: 30px;
-  font-weight: 900;
-  color: #1f0704;
-  
-}
-
+ul,
 .form-contact-input-header {
   text-align: center;
   margin: 0 0 1rem 0;
@@ -45,22 +58,27 @@ ul, .form-contact-input-header {
   font-size: 30px;
   font-weight: 900;
   color: #1f0704;
-  
 }
 
 .form-contact {
   //background: #a87c60;
-  
-  
 }
-
+.home-photo {
+  //background: #a87c60;
+}
 .form-brand {
   text-align: center;
   color: #1f0704;
   line-height: 40px;
   font-size: 36px;
   font-weight: 900;
-  
+}
+.home-brand {
+  text-align: center;
+  color: #1f0704;
+  line-height: 40px;
+  font-size: 36px;
+  font-weight: 900;
 }
 
 .form-er {
@@ -112,10 +130,7 @@ ul, .form-contact-input-header {
   transition: background-color 1s ease-out;
 }
 
-// CONTACT-comments FORM
-
-// CONTACT FORM
-
+//NAVLINKS
 @media all and (max-width: 1000px) {
   .nav-links {
     flex-wrap: wrap;
@@ -131,8 +146,8 @@ ul, .form-contact-input-header {
     flex-basis: 100%;
   }
 }
-
-@media (min-width: 700px) {
+//FORM
+@media (min-width: 800px) {
   .form-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -144,7 +159,7 @@ ul, .form-contact-input-header {
   .form-company-info h3,
   .form-company-info ul,
   .form-brand {
-    text-align: left;
+    text-align: right;
   }
 }
 
@@ -193,7 +208,7 @@ body {
   color: #1f0704;
   line-height: 80px;
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 .errors-input {
@@ -201,3 +216,24 @@ body {
   font-weight: 1000;
   font-size: 18px;
 }
+
+// .home-container {
+//   display: flex;
+//   //place-items: center;
+//   flex-direction: row;
+//   padding: 40px;
+//   margin: 0;
+//   width: 100%;
+// }
+// .home-introduction {
+//   color: rgb(56, 21, 211);
+//   font-weight: 1000;
+//   font-size: 24px;
+//   padding: 50px;
+// }
+// .home-photo {
+//   place-items: center;
+// }
+// .home-photo img {
+//   padding: 50px;
+// }
