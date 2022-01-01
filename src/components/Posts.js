@@ -3,7 +3,7 @@ import Post from "../components/Post";
 
 const Posts = ({ posts }) => {
   return (
-    <div>
+    <div className="post-container">
       {posts.map((post, index) => (
         <Post post={post} key={index} />
       ))}

@@ -20,7 +20,7 @@
 }
 .home-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   padding: 1em;
@@ -134,7 +134,6 @@ ul,
 @media all and (max-width: 1000px) {
   .nav-links {
     flex-wrap: wrap;
-    
   }
 
   .nav-links li {
