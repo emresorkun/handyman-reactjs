@@ -43,6 +43,7 @@
   //background: #c76e32;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   color: #1f0704;
   font-weight: 1000;
@@ -139,7 +140,6 @@ ul,
   .nav-links li {
     flex: 1 1 50%;
   }
-
 }
 
 @media all and (max-width: 480px) {
@@ -147,14 +147,19 @@ ul,
     flex-basis: 100%;
   }
   .home-wrapper {
+    flex-wrap: wrap;
+    //flex-direction: column;
     //YAZ
-    background-image: url(./images/home.jpeg);
+    //background-image: url(./images/home.jpeg);
   }
   .home-wrapper img {
-    display: none;
+    //width: 100%;
   }
   .home-introduction {
     display: grid;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
   }
 }
 @media all and (max-width: 1000px) {
@@ -163,9 +168,10 @@ ul,
   }
   .home-wrapper {
     //YAZ
+    flex-wrap: wrap;
   }
   .home-wrapper img {
-    display: none;
+    //display: none;
   }
 }
 //FORM
