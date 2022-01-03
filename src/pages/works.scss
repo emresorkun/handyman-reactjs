@@ -63,9 +63,9 @@ header {
   display: grid;
   place-items: center;
   align-items: center;
-  margin: 1em;
-  margin-bottom: 20px;
-  width: 98%;
+  padding: 8px 0px;
+  margin: 20px;
+  //width: 98%;
 }
 
 .logo-wrapper {
@@ -92,12 +92,32 @@ main .wrapper {
 }
 .post {
   flex-grow: 1;
-  width: 50%;
+  width: 45%;
   height: auto;
-  padding: 20px;
-  margin-bottom: 50px;
+  padding: 50px;
+  //margin-bottom: 50px;
+  margin: 10px;
   background-color: #a87c60;
   box-shadow: 10px 20px 20px 10px #1f0704;
+}
+
+@media all and (max-width: 1000px) {
+  .post {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .post {
+    padding: 10px;
+  }
+  .post section p {
+    display: none;
+  }
+  .post .title {
+    font-size: 16px;
+  }
 }
 
 .post img {
