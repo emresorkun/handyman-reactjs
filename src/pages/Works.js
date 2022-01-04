@@ -25,8 +25,8 @@ class Works extends React.Component {
     return (
       <>
         <header>
-          <div className="wrapper">
-            <span className="logo">Some Of Our Completed Works</span>
+          <div className="logo-wrapper">
+            <span className="logo">Some Of Our Works</span>
           </div>
         </header>
         <div className="Works">

@@ -46,7 +46,7 @@ function ContactForm() {
   return (
     <>
       <header>
-        <div className="wrapper">
+        <div className="logo-wrapper">
           <h1 className="logo">Drop us a Line!</h1>
         </div>
       </header>

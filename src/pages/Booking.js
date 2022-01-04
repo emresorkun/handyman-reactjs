@@ -15,7 +15,7 @@ export default function MaterialUIPickers() {
   return (
     <>
       <header>
-        <div className="wrapper">
+        <div className="logo-wrapper">
           <span className="logo">You can choose your prefered time here!</span>
         </div>
       </header>

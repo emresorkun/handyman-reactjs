@@ -3,7 +3,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function Navibar() {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark">
+    <Navbar fixed="top" collapseOnSelect expand="lg" variant="dark">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">

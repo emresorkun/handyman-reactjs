@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       <header>
-        <div className="wrapper">
+        <div className="logo-wrapper">
           <span className="logo">Our Services</span>
         </div>
       </header>

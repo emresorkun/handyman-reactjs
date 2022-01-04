@@ -71,12 +71,11 @@ export default function CommentsPrint() {
                     bordered={true}
                     style={{ width: 500 }}
                     headStyle={{
-                      //backgroundColor: "#6B8E23",
-                      backgroundColor: "#A87C60",
+                      backgroundColor: "#C76E32",
+                      color: "rgba(255, 255, 255, 0.55)",
                     }}
                     bodyStyle={{
-                      //backgroundColor: "#B4C424",#C76E32
-                      backgroundColor: "#C76E32",
+                      backgroundColor: "#A87C60",
                     }}
                   >
                     {" "}

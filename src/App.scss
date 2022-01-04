@@ -161,6 +161,15 @@ ul,
     font-size: 18px;
     text-align: center;
   }
+
+  .header {
+    display: flex;
+  }
+  .logo-wrapper .logo {
+    font-size: 24px;
+    //color: #1f0704;
+    flex-wrap: wrap;
+  }
 }
 @media all and (max-width: 1000px) {
   .nav-links li {
