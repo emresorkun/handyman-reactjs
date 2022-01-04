@@ -7,6 +7,7 @@ import { Card, List } from "antd";
 
 export default function CommentsPrint() {
   const [comments, setComments] = useState([]);
+  //ask to RAKIP
   const [adminButton, setadminButton] = useState("display");
   const commentsCollectionRef = collection(db, "comments");
 
@@ -19,6 +20,7 @@ export default function CommentsPrint() {
 
     getComments();
   }, []);
+  console.log(comments);
   return (
     <>
       <header>
@@ -27,22 +29,6 @@ export default function CommentsPrint() {
         </div>
       </header>
       <div className="comments-container">
-        {/* {comments.map((comment) => {
-        return (
-          <div className="comments" key={comment.id}>
-            <div className="site-card-border-less-wrapper">
-              <Card
-                title={comment.firstName}
-                bordered={true}
-                style={{ width: 300 }}
-              >
-                {" "}
-                <div>{comment.comment}</div>
-              </Card>
-            </div>
-          </div>
-        );
-      })} */}
         <List
           grid={{
             gutter: 16,
