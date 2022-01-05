@@ -4,23 +4,53 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import "antd/dist/antd.css";
 import { List } from "antd";
+import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 export default function ContactsPrint() {
   const [contacts, setContacts] = useState([]);
   //ask to RAKIP
-  const [adminButton, setadminButton] = useState("display");
+
   const contactsCollectionRef = collection(db, "contacts");
+
+  // const deleteContact = async (id) => {
+  //   contactsCollectionRef
+  //     .doc(id)
+  //     .console.log(id)
+  //     .delete()
+  //     .then((result) => {
+  //       console.log("Document successfully deleted!");
+  //     })
+  //     .catch((err) => {
+  //       console.error("Error removing document");
+  //     });
+  // };
 
   useEffect(() => {
     const getContacts = async () => {
       const data = await getDocs(contactsCollectionRef);
       setContacts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.log(contacts);
     };
-
     getContacts();
   }, []);
-  console.log(contacts);
+
+  // const test = async (id, phoneNumber) => {
+
+  //   const commentDoc = doc(db, "contacts", id);
+  //   const newFields = { phoneNumber: phoneNumber + 100000 };
+  //   await updateDoc(commentDoc, newFields);
+  // };
+
+  const deleteContact = async (id) => {
+    const commentDoc = doc(db, "contacts", id);
+    await deleteDoc(commentDoc)
+      .then(() => {
+        console.log("Document successfully deleted!");
+      })
+      .catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  };
+
   return (
     <>
       <header>
@@ -46,10 +76,9 @@ export default function ContactsPrint() {
                   backgroundColor: "#8b664c",
                   color: "rgba(255, 255, 255, 0.55)",
                   fontSize: "16px",
-                  
                 }}
               />
-              <button>Solved!</button>
+              <button onClick={() => deleteContact(item.id)}>X</button>
             </List.Item>
           )}
         />

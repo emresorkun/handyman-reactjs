@@ -38,7 +38,7 @@ function ContactForm() {
     const createContact = async (values) => {
       await addDoc(contactsCollectionRef, values);
     };
-
+    createContact();
     //console.log(createComment().then((e) => console.log(e)));
     //yukardaki console=>ne oluyor anlamak icin
   }, []);

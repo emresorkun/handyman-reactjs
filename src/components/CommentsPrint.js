@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
@@ -20,12 +20,22 @@ export default function CommentsPrint() {
 
     getComments();
   }, []);
-  console.log(comments);
+
+  const deleteComment = async (id) => {
+    const commentDoc = doc(db, "comments", id);
+    await deleteDoc(commentDoc)
+      .then(() => {
+        console.log("Document successfully deleted!");
+      })
+      .catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  };
   return (
     <>
       <header>
         <div className="logo-wrapper">
-          <span className="logo">Comments from our Customers</span>
+          <span className="logo">Customer Comments</span>
         </div>
       </header>
       <div className="comments-container">
@@ -67,11 +77,7 @@ export default function CommentsPrint() {
                     {" "}
                     <div>{item.comment}</div>
                   </Card>
-                  <button
-                    type="submit"
-                    onClick={console.log("clickadsasdasd")}
-                    style={{ display: "none" }}
-                  >
+                  <button onClick={() => deleteComment(item.id)} type="submit">
                     Delete
                   </button>
                 </div>
