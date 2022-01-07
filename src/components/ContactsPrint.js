@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import "antd/dist/antd.css";
 import { List } from "antd";
-import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { doc, deleteDoc, updateDoc, onSnapshot } from "firebase/firestore";
 
 export default function ContactsPrint() {
   const [contacts, setContacts] = useState([]);
   //ask to RAKIP
 
-  const contactsCollectionRef = collection(db, "contacts");
+  //const contactsCollectionRef = collection(db, "contacts");
 
   // const deleteContact = async (id) => {
   //   contactsCollectionRef
@@ -25,13 +25,21 @@ export default function ContactsPrint() {
   //     });
   // };
 
-  useEffect(() => {
-    const getContacts = async () => {
-      const data = await getDocs(contactsCollectionRef);
-      setContacts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getContacts();
-  }, []);
+  // useEffect(() => {
+  //   const getContacts = async () => {
+  //     const data = await getDocs(contactsCollectionRef);
+  //     setContacts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   };
+  //   getContacts();
+  // }, []);
+
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "contacts"), (snapshot) =>
+        setContacts(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      ),
+    []
+  );
 
   // const test = async (id, phoneNumber) => {
 
