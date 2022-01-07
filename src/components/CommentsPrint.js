@@ -1,4 +1,10 @@
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  doc,
+  onSnapshot,
+} from "firebase/firestore";
 import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
@@ -11,18 +17,28 @@ export default function CommentsPrint() {
   const [adminButton, setadminButton] = useState("display");
   const commentsCollectionRef = collection(db, "comments");
 
-  useEffect(() => {
-    const getComments = async () => {
-      const data = await getDocs(commentsCollectionRef);
-      setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.log(comments);
-    };
+  // useEffect(() => {
+  //   const getComments = async () => {
+  //     const data = await getDocs(commentsCollectionRef);
+  //     setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //     console.log(comments);
+  //   };
 
-    getComments();
-  }, []);
+  //   getComments();
+  // }, []);
+
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "comments"), (snapshot) =>
+        setComments(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      ),
+    []
+  );
 
   const deleteComment = async (id) => {
+    
     const commentDoc = doc(db, "comments", id);
+    console.log(id);
     await deleteDoc(commentDoc)
       .then(() => {
         console.log("Document successfully deleted!");
