@@ -6,10 +6,11 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DateTimePicker from "@mui/lab/DateTimePicker";
 
 export default function MaterialUIPickers() {
-  const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
+  const [date, setDate] = React.useState(new Date());
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
+  const handleChange = (newDate) => {
+    setDate(newDate);
+    console.log();
   };
 
   return (
@@ -25,9 +26,17 @@ export default function MaterialUIPickers() {
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <Stack spacing={3}>
               <DateTimePicker
+                variant="dialog"
+                hintText="Weekends Disabled"
+                //variant="dialog"
                 label="Date&Time picker"
-                value={value}
+                value={date}
                 onChange={handleChange}
+                //minDateTime={new Date()}
+                disablePast="true"
+                minDateTime={new Date().setHours(new Date().getHours() + 6)}
+                //maxDateTime={new Date().setHours(18)}
+                maxDate={new Date().setHours(new Date().getHours() + 450)}
                 renderInput={(params) => <TextField {...params} />}
               />
             </Stack>
