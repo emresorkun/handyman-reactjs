@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import "antd/dist/antd.css";
 import { Card, List } from "antd";
+import { useUser } from "../context/userContext";
 
 export default function CommentsPrint() {
   const [comments, setComments] = useState([]);
@@ -36,7 +37,6 @@ export default function CommentsPrint() {
   );
 
   const deleteComment = async (id) => {
-    
     const commentDoc = doc(db, "comments", id);
     console.log(id);
     await deleteDoc(commentDoc)
@@ -47,6 +47,10 @@ export default function CommentsPrint() {
         console.error("Error removing document: ", error);
       });
   };
+
+  const user = useUser();
+  const isUser = user.isUser;
+  console.log(isUser);
   return (
     <>
       <header>
@@ -93,9 +97,9 @@ export default function CommentsPrint() {
                     {" "}
                     <div>{item.comment}</div>
                   </Card>
-                  <button onClick={() => deleteComment(item.id)} type="submit">
-                    Delete
-                  </button>
+                  {isUser && (
+                    <button onClick={() => deleteComment(item.id)}>X</button>
+                  )}
                 </div>
               </div>
             </List.Item>

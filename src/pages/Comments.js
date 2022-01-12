@@ -3,8 +3,10 @@ import { Formik, Field, Form } from "formik";
 import CommentsPrint from "../components/CommentsPrint";
 import { db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
+import { auth } from "../firebase/config";
 import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
+import { useUser } from "../context/userContext";
 
 const CommentsSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -43,12 +45,15 @@ function Comments() {
     //console.log(createComment().then((e) => console.log(e)));
     //yukardaki console=>ne oluyor anlamak icin
   }, []);
-
+  const user = useUser();
+  const isUser = user.isUser;
+  
   return (
     <>
       <CommentsPrint />
       <div className="form-container">
         <h1 className="form-brand">Share Your Comments With Us!</h1>
+
         <div className="form-wrapper">
           <div className="form-company-info">
             <ul>

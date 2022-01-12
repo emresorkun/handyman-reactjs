@@ -5,6 +5,7 @@ import { db } from "../firebase/config";
 import "antd/dist/antd.css";
 import { List } from "antd";
 import { doc, deleteDoc, updateDoc, onSnapshot } from "firebase/firestore";
+import { useUser } from "../context/userContext";
 
 export default function ContactsPrint() {
   const [contacts, setContacts] = useState([]);
@@ -59,6 +60,11 @@ export default function ContactsPrint() {
       });
   };
 
+  const user = useUser();
+  const isUser = user.isUser;
+  console.log(isUser);
+  
+
   return (
     <>
       <header>
@@ -86,71 +92,13 @@ export default function ContactsPrint() {
                   fontSize: "16px",
                 }}
               />
-              <button onClick={() => deleteContact(item.id)}>X</button>
+              {isUser && (
+                <button onClick={() => deleteContact(item.id)}>X</button>
+              )}
             </List.Item>
           )}
         />
       </div>
     </>
-    // <>
-    //   <header>
-    //     <div className="logo-wrapper">
-    //       <span className="logo">Master, Here are the contact forms!</span>
-    //     </div>
-    //   </header>
-    //   <div className="comments-container">
-    //     <List
-    //       grid={{
-    //         gutter: 16,
-    //         xs: 1,
-    //         sm: 1,
-    //         md: 2,
-    //         lg: 2,
-    //         xl: 3,
-    //         xxl: 3,
-    //       }}
-    //       dataSource={contacts}
-    //       renderItem={(item) => (
-    //         <List.Item>
-    //           <div className="comments" key={item.id}>
-    //             <div
-    //               className="site-card-border-less-wrapper"
-    //               style={{
-    //                 display: "flex",
-    //                 justifyContent: "center",
-    //                 margin: "12px",
-    //               }}
-    //             >
-    //               <Card
-    //                 className="card"
-    //                 title={item.lastName+item.firstName}
-    //                 bordered={true}
-    //                 style={{ width: 500 }}
-    //                 headStyle={{
-    //                   backgroundColor: "#C76E32",
-    //                   color: "rgba(255, 255, 255, 0.55)",
-    //                 }}
-    //                 bodyStyle={{
-    //                   backgroundColor: "#A87C60",
-    //                 }}
-    //               >
-    //                 {" "}
-    //                 <div>{item.comment}</div>
-    //               </Card>
-    //               <button
-    //                 type="submit"
-    //                 onClick={console.log("clickadsasdasd")}
-    //                 style={{ display: "none" }}
-    //               >
-    //                 Delete
-    //               </button>
-    //             </div>
-    //           </div>
-    //         </List.Item>
-    //       )}
-    //     />
-    //     ,
-    //   </div>
-    // </>
   );
 }

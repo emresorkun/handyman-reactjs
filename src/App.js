@@ -10,27 +10,31 @@ import Home from "./pages/Home";
 import SingleWork from "./pages/SingleWork";
 import Works from "./pages/Works";
 import PageNotFound from "./pages/PageNotFound";
-
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import { UserProvider } from "./context/userContext";
 
 function App() {
   return (
     <Router>
-      <div className="container">
-        <Navbar />
-        <div className="container-routes">
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route exact path="/bookings" element={<Booking />} />
-            <Route exact path="/comments" element={<Comments />} />
-            <Route exact path="/contact-form" element={<ContactForm />} />
-            <Route exact path="/works" element={<Works />} />
-            <Route exact path="/works/:id" element={<SingleWork />} />
-            <Route element={<PageNotFound />} />
-          </Routes>
+      <UserProvider>
+        <div className="container">
+          <Navbar />
+          <div className="container-routes">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/login" element={<Login />} />
+              <Route exact path="/bookings" element={<Booking />} />
+              <Route exact path="/comments" element={<Comments />} />
+              <Route exact path="/contact-form" element={<ContactForm />} />
+              <Route exact path="/works" element={<Works />} />
+              <Route exact path="/works/:id" element={<SingleWork />} />
+              <Route element={<PageNotFound />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+      </UserProvider>
     </Router>
   );
 }
