@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 h1,
@@ -68,9 +69,9 @@ header {
 }
 
 .logo-wrapper {
-  width: 100%;
   padding: 10px;
   margin: auto;
+  border-radius: 3px;
 }
 
 .logo {

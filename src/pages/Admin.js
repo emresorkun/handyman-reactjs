@@ -15,7 +15,13 @@ const Admin = () => {
           <CommentsPrint />
         </div>
       ) : (
-        <div>nONONONONONNOONNONO</div>
+        <header>
+          <div className="logo-wrapper">
+            <span className="logo">
+              Not Authorized!
+            </span>
+          </div>
+        </header>
       )}
     </div>
   );

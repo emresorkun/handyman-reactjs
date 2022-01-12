@@ -8,12 +8,24 @@ export default function Navibar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Link to="/">Home</Link>
-          <Link to="contact-form">Contact Form</Link>
-          <Link to="comments">Your Comments</Link>
-          <Link to="bookings">Book your Carpenter</Link>
-          <Link to="works">Portfolio</Link>
-          <Link to="admin">Login</Link>
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="contact-form" className="nav-link">
+            Contact Form
+          </Link>
+          <Link to="comments" className="nav-link">
+            Your Comments
+          </Link>
+          <Link to="bookings" className="nav-link">
+            Book your Carpenter
+          </Link>
+          <Link to="works" className="nav-link">
+            Portfolio
+          </Link>
+          <Link to="admin" className="nav-link">
+            Admin
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
