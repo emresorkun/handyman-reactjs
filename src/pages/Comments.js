@@ -3,7 +3,6 @@ import { Formik, Field, Form } from "formik";
 import CommentsPrint from "../components/CommentsPrint";
 import { db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
-import { auth } from "../firebase/config";
 import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
 import { useUser } from "../context/userContext";
@@ -28,11 +27,6 @@ const CommentsSchema = Yup.object().shape({
 
 const commentsCollectionRef = collection(db, "comments");
 
-// const createComment = async (values) => {
-// await addDoc(commentsCollectionRef, values)
-// //Values ;(
-// }
-//let createComment = {};
 function createComment() {
   return;
 }
@@ -47,7 +41,7 @@ function Comments() {
   }, []);
   const user = useUser();
   const isUser = user.isUser;
-  
+
   return (
     <>
       <CommentsPrint />

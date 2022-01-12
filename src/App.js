@@ -29,7 +29,7 @@ function App() {
               <Route exact path="/comments" element={<Comments />} />
               <Route exact path="/contact-form" element={<ContactForm />} />
               <Route exact path="/works" element={<Works />} />
-              <Route exact path="/works/:id" element={<SingleWork />} />
+              <Route exact path="/works/test" element={<SingleWork />} />
               <Route element={<PageNotFound />} />
             </Routes>
           </div>

@@ -20,10 +20,7 @@ const Home = () => {
             Please get in contact with us for more details and our references.
           </div>
           <div className="home-photo">
-            <img
-              src={require("../images/home.jpeg")}
-              alt="Grapefruit slice atop a pile of other slices"
-            ></img>
+            <img src={require("../images/home.jpeg")} alt="Carpenter"></img>
           </div>
         </div>
         <Carousel>

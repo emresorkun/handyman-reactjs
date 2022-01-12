@@ -15,9 +15,7 @@ function Login() {
   const [loginPassword, setLoginPassword] = useState("");
 
   const [user, setUser] = useState({});
-  console.log(user);
   onAuthStateChanged(auth, (currentUser) => {
-    console.log("ex");
     setUser(currentUser);
     if (currentUser) {
       setIsUser(true);
@@ -31,7 +29,7 @@ function Login() {
         loginEmail,
         loginPassword
       );
-      console.log(user);
+      // console.log(user);
     } catch (error) {
       console.log(error.message);
     }
@@ -41,7 +39,7 @@ function Login() {
     await signOut(auth);
     setIsUser(false);
   };
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="App">
@@ -61,8 +59,7 @@ function Login() {
         />
 
         <button onClick={login}> Login</button>
-        <h4> User Logged In: </h4>
-        {user?.email}
+        {user?.email + " in the house"}
 
         <button onClick={logout}> Sign Out </button>
       </div>

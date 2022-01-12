@@ -4,23 +4,19 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DateTimePicker from "@mui/lab/DateTimePicker";
+import emailjs from "@emailjs/browser";
+//import emailjs from "@emailjs-com";
 
 export default function MaterialUIPickers() {
   const [date, setDate] = React.useState(new Date());
 
   const handleChange = (newDate) => {
     setDate(newDate);
-    console.log();
   };
 
+  console.log(date);
   return (
     <>
-      <header>
-        <div className="logo-wrapper">
-          <span className="logo">You can choose your prefered time here!</span>
-        </div>
-      </header>
-
       <div className="datepicker-container">
         <div className="datepicker">
           <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -33,7 +29,7 @@ export default function MaterialUIPickers() {
                 value={date}
                 onChange={handleChange}
                 //minDateTime={new Date()}
-                disablePast="true"
+                disablePast={true}
                 minDateTime={new Date().setHours(new Date().getHours() + 6)}
                 //maxDateTime={new Date().setHours(18)}
                 maxDate={new Date().setHours(new Date().getHours() + 450)}
@@ -43,6 +39,15 @@ export default function MaterialUIPickers() {
           </LocalizationProvider>
         </div>
       </div>
+      <div>
+        <h1>{}</h1>
+      </div>
     </>
   );
 }
+//input fields for email and number
+//conditional: required info from inputs fields
+//submit button triggers a function
+//add your message body use a mail server
+//sends the email to the carpenter
+//email.js

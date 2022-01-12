@@ -6,7 +6,7 @@ const Admin = () => {
   const user = useUser();
   const isUser = user.isUser;
   console.log(isUser);
-
+  document.querySelectorAll(" h4 * h6 ");
   return (
     <div>
       {isUser ? (
@@ -17,9 +17,7 @@ const Admin = () => {
       ) : (
         <header>
           <div className="logo-wrapper">
-            <span className="logo">
-              Not Authorized!
-            </span>
+            <span className="logo">Not Authorized!</span>
           </div>
         </header>
       )}

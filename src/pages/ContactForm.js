@@ -4,6 +4,8 @@ import { db } from "../firebase/config";
 import { doc, setDoc } from "firebase/firestore";
 import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
+import { useUser } from "../context/userContext";
+
 
 const ContactsSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -36,12 +38,18 @@ function createContact() {
 function ContactForm() {
   useEffect(() => {
     const createContact = async (values) => {
+      //BURAYA DIKKAT!
       await addDoc(contactsCollectionRef, values);
+
+      console.log(values);
     };
     createContact();
-    //console.log(createComment().then((e) => console.log(e)));
+
+    //console.log(createContact().then((e) => console.log(e)));
     //yukardaki console=>ne oluyor anlamak icin
   }, []);
+  const user = useUser();
+  const isUser = user.isUser;
 
   return (
     <>
@@ -69,7 +77,17 @@ function ContactForm() {
             }}
             validationSchema={ContactsSchema}
             onSubmit={async (values) => {
+              try {
+                console.log("tried");
+                
+              } catch {
+                console.log("failed");
+              }
+              //
+              console.log(values);
               await addDoc(contactsCollectionRef, values);
+              //
+            
             }}
           >
             {({ errors, touched }) => (
@@ -167,6 +185,7 @@ function ContactForm() {
               </div>
             )}
             {/* </div> */}
+            {}
           </Formik>
         </div>
       </div>
