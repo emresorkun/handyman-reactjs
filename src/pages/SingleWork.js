@@ -47,6 +47,13 @@ function ContactForm() {
       </header>{" "}
       <div className="form-container">
         <div className="form-wrapper">
+          <div className="form-company-info">
+            <ul>
+              <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
+              <li>05332360818</li>
+              <li>tahtadan@tahtadandukkan.com</li>
+            </ul>
+          </div>
           <Formik
             initialValues={{
               firstName: "",
@@ -73,74 +80,73 @@ function ContactForm() {
             }}
           >
             {({ errors, touched }) => (
-              <div className="form-contact">
-                <Form>
-                  <div className="form-contact-input">
-                    <p>
-                      <label
-                        htmlFor="firstName"
-                        className="form-contact-input-header"
-                      >
-                        Name
-                      </label>
-                      <Field
-                        id="firstName"
-                        name="firstName"
-                        placeholder="Jane"
-                        type="firstName"
-                      />
-                      {errors.firstName && touched.firstName ? (
-                        <div className="errors-input">{errors.firstName}</div>
-                      ) : null}
-                    </p>
-                    <p>
-                      <label
-                        htmlFor="lastName"
-                        className="form-contact-input-header"
-                      >
-                        Surname
-                      </label>
-                      <Field id="lastName" name="lastName" placeholder="Doe" />
-                      {errors.lastName && touched.lastName ? (
-                        <div className="errors-input">{errors.lastName}</div>
-                      ) : null}
-                    </p>
-                    <p>
-                      <label
-                        htmlFor="email"
-                        className="form-contact-input-header"
-                      >
-                        Email
-                      </label>
-                      <Field
-                        id="email"
-                        name="email"
-                        placeholder="jane@acme.com"
-                        type="email"
-                      />
-                      {errors.email && touched.email ? (
-                        <div className="errors-input">{errors.email}</div>
-                      ) : null}
-                    </p>
-                    <p>
-                      <label
-                        htmlFor="phoneNumber"
-                        className="form-contact-input-header"
-                      >
-                        Mobile
-                      </label>
-                      <Field
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="0533 ..."
-                        type="phoneNumber"
-                      />
-                      {errors.phoneNumber && touched.phoneNumber ? (
-                        <div className="errors-input">{errors.phoneNumber}</div>
-                      ) : null}
-                    </p>
+              <Form>
+                <div className="form-contact-input">
+                  <p>
+                    <label
+                      htmlFor="firstName"
+                      className="form-contact-input-header"
+                    >
+                      Name
+                    </label>
+                    <Field
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Jane"
+                      type="firstName"
+                    />
+                    {errors.firstName && touched.firstName ? (
+                      <div className="errors-input">{errors.firstName}</div>
+                    ) : null}
+                  </p>
+                  <p>
+                    <label
+                      htmlFor="lastName"
+                      className="form-contact-input-header"
+                    >
+                      Surname
+                    </label>
+                    <Field id="lastName" name="lastName" placeholder="Doe" />
+                    {errors.lastName && touched.lastName ? (
+                      <div className="errors-input">{errors.lastName}</div>
+                    ) : null}
+                  </p>
+                  <p>
+                    <label
+                      htmlFor="email"
+                      className="form-contact-input-header"
+                    >
+                      Email
+                    </label>
+                    <Field
+                      id="email"
+                      name="email"
+                      placeholder="jane@acme.com"
+                      type="email"
+                    />
+                    {errors.email && touched.email ? (
+                      <div className="errors-input">{errors.email}</div>
+                    ) : null}
+                  </p>
+                  <p>
+                    <label
+                      htmlFor="phoneNumber"
+                      className="form-contact-input-header"
+                    >
+                      Mobile
+                    </label>
+                    <Field
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      placeholder="0533 ..."
+                      type="phoneNumber"
+                    />
+                    {errors.phoneNumber && touched.phoneNumber ? (
+                      <div className="errors-input">{errors.phoneNumber}</div>
+                    ) : null}
+                  </p>
 
-                    <p className="full">
+                  {/* <p className="full">
                       <label
                         htmlFor="message"
                         className="form-contact-input-header"
@@ -157,44 +163,59 @@ function ContactForm() {
                       {errors.message && touched.message ? (
                         <div className="errors-input">{errors.message}</div>
                       ) : null}
-                    </p>
+                    </p> */}
 
-                    <p className="full">
-                      <label
-                        htmlFor="message"
-                        className="form-contact-input-header"
-                      >
-                        Choose your prefered date&time for us to call!
-                      </label>
-                      <Field
-                        id="date"
-                        name="date"
-                        type="date"
-                        component={MaterialUIPickers}
-                        rows="5"
-                        date= {new Date()} 
-                      />
-                    </p>
+                  <p className="full">
+                    <label
+                      htmlFor="message"
+                      className="form-contact-input-header"
+                    >
+                      When?
+                    </label>
+                    <Field
+                      id="date"
+                      name="date"
+                      type="date"
+                      rows="5"
+                      date={new Date()}
+                    />
+                    <Field
+                      id="time"
+                      name="time"
+                      type="time"
+                      rows="5"
+                      date={new Date()}
+                    />
+                  </p>
+                  <p className="full">
+                    <label
+                      htmlFor="message"
+                      className="form-contact-input-header"
+                    >
+                      Message
+                    </label>
+                    <Field
+                      id="message"
+                      name="message"
+                      placeholder="Any questions?"
+                      type="textarea"
+                      rows="5"
+                    />
+                    {errors.message && touched.message ? (
+                      <div className="errors-input">{errors.message}</div>
+                    ) : null}
+                  </p>
 
-                    <p className="full">
-                      <button type="submit" onClick={createContact}>
-                        Submit
-                      </button>
-                    </p>
-                  </div>
-                </Form>
-              </div>
+                  <p className="full">
+                    <button type="submit" onClick={createContact}>
+                      Submit
+                    </button>
+                  </p>
+                </div>
+              </Form>
             )}
             {/* </div> */}
           </Formik>
-          {/* <div className="form-company-info"> */}
-          {/* <MaterialUIPickers></MaterialUIPickers> */}
-          {/* <ul>
-              <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
-              <li>05332360818</li>
-              <li>tahtadan@tahtadandukkan.com</li>
-            </ul> */}
-          {/* </div> */}
         </div>
       </div>
     </>
