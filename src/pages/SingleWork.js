@@ -27,11 +27,6 @@ const ContactsSchema = Yup.object().shape({
 
 const contactsCollectionRef = collection(db, "contacts");
 
-// const createComment = async (values) => {
-// await addDoc(commentsCollectionRef, values)
-// //Values ;(
-// }
-//let createComment = {};
 function createContact() {
   return;
 }
@@ -41,8 +36,6 @@ function ContactForm() {
       await addDoc(contactsCollectionRef, values);
     };
     createContact();
-    //console.log(createComment().then((e) => console.log(e)));
-    //yukardaki console=>ne oluyor anlamak icin
   }, []);
 
   return (
@@ -61,11 +54,11 @@ function ContactForm() {
               email: "",
               phoneNumber: "",
               message: "",
+              date: "",
             }}
             validationSchema={ContactsSchema}
             onSubmit={async (values) => {
               try {
-                console.log("tried");
                 emailjs.send(
                   "service_ip3ddds",
                   "template_gg1xws7",
@@ -76,7 +69,6 @@ function ContactForm() {
                 console.log("failed");
               }
               //
-              console.log(values);
               await addDoc(contactsCollectionRef, values);
             }}
           >
@@ -147,6 +139,7 @@ function ContactForm() {
                         <div className="errors-input">{errors.phoneNumber}</div>
                       ) : null}
                     </p>
+
                     <p className="full">
                       <label
                         htmlFor="message"
@@ -165,6 +158,24 @@ function ContactForm() {
                         <div className="errors-input">{errors.message}</div>
                       ) : null}
                     </p>
+
+                    <p className="full">
+                      <label
+                        htmlFor="message"
+                        className="form-contact-input-header"
+                      >
+                        Choose your prefered date&time for us to call!
+                      </label>
+                      <Field
+                        id="date"
+                        name="date"
+                        type="date"
+                        component={MaterialUIPickers}
+                        rows="5"
+                        date= {new Date()} 
+                      />
+                    </p>
+
                     <p className="full">
                       <button type="submit" onClick={createContact}>
                         Submit
@@ -176,14 +187,14 @@ function ContactForm() {
             )}
             {/* </div> */}
           </Formik>
-          <div className="form-company-info">
-            <MaterialUIPickers></MaterialUIPickers>
-            {/* <ul>
+          {/* <div className="form-company-info"> */}
+          {/* <MaterialUIPickers></MaterialUIPickers> */}
+          {/* <ul>
               <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
               <li>05332360818</li>
               <li>tahtadan@tahtadandukkan.com</li>
             </ul> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>

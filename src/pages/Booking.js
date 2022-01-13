@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DateTimePicker from "@mui/lab/DateTimePicker";
-import emailjs from "@emailjs/browser";
+//import emailjs from "@emailjs/browser";
 //import emailjs from "@emailjs-com";
 
 export default function MaterialUIPickers() {
@@ -14,7 +14,7 @@ export default function MaterialUIPickers() {
     setDate(newDate);
   };
 
-  console.log(date);
+  //console.log(date);
   return (
     <>
       <div className="datepicker-container">
