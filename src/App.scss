@@ -175,33 +175,23 @@ ul,
   //   padding: 8px 0px;
   //   margin: 150px;
   // }
-
-  .new-header-component {
-    border-style: dotted 5px red;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    padding: 1em;
-    margin-bottom: 2em;
-    background-color: rgb(192, 45, 26);
-    color: #fff;
-    display: none;
-  }
+  
 
   .logo-wrapper {
-    background-color: red;
-    padding: 100px;
     margin: auto;
-    border-radius: 33px;
+    background-color: transparent;
   }
   .logo-wrapper .logo {
-    font-size: 32px;
-    background-color: red;
+    font-size: 24px;
     flex-wrap: wrap;
   }
   .form-contact-input {
-    margin-left: 15px;
+    //margin-left: 10px;
+    place-content: center;
+  }
+  .footer,
+  .form-company-info {
+    display: none;
   }
 }
 @media all and (max-width: 1000px) {
@@ -324,7 +314,7 @@ body {
   justify-content: center;
   margin: 500px;
 }
-.footer{
+.footer {
   margin-top: 1rem;
   padding: 1rem;
   background-color: #1f0704;
