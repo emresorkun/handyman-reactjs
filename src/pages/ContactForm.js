@@ -60,6 +60,7 @@ function ContactForm() {
       </header>
       <div className="form-container">
         <div className="form-wrapper">
+          
           <div className="form-company-info">
             <ul>
               <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
