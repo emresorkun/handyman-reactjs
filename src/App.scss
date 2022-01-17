@@ -136,7 +136,21 @@ ul,
   outline: 0;
   transition: background-color 1s ease-out;
 }
-
+header {
+  // height: 60px;
+  // line-height: 60px;
+  text-align: center;
+  border-radius: 18px;
+  // color: rgba(0, 0, 0, 0.55);
+  //box-shadow: 0 0 10px 0 rgba(72, 94, 116, 0.7);
+  background-color: #1f0704;
+  box-shadow: 0 0 20px 0 #1f0704;
+  //display: grid;
+  place-items: center;
+  align-items: center;
+  padding: 8px 0px;
+  margin: 150px;
+}
 //NAVLINKS
 @media all and (max-width: 1000px) {
   .nav-links {
@@ -162,7 +176,12 @@ ul,
     justify-content: center;
     align-items: center;
     padding: 1em;
-}
+  }
+
+  header {
+    margin: 50px;
+    margin-bottom: 0px;
+  }
 }
 
 @media all and (max-width: 480px) {
