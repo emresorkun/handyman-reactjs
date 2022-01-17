@@ -148,18 +148,23 @@ ul,
   }
   .home-wrapper {
     flex-wrap: wrap;
+    padding: 0;
     //flex-direction: column;
     //YAZ
     //background-image: url(./images/home.jpeg);
   }
-  .home-wrapper img {
-    //width: 100%;
-  }
+
   .home-introduction {
-    display: grid;
+    //display: grid;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
+    padding: 0;
+  }
+
+  .img {
+    //display: none;
+    border-radius: 50%;
   }
 
   // header {
@@ -175,7 +180,6 @@ ul,
   //   padding: 8px 0px;
   //   margin: 150px;
   // }
-  
 
   .logo-wrapper {
     margin: auto;
@@ -192,6 +196,11 @@ ul,
   .footer,
   .form-company-info {
     display: none;
+  }
+  .footer .copyright {
+    font-size: 18px;
+    color: red;
+    margin-bottom: 13px;
   }
 }
 @media all and (max-width: 1000px) {
@@ -315,6 +324,10 @@ body {
   margin: 500px;
 }
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin-top: 1rem;
   padding: 1rem;
   background-color: #1f0704;
@@ -322,4 +335,10 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 99px;
+}
+.footer .copyright {
+  font-size: 18px;
+  color: aliceblue;
+  margin-bottom: 13px;
 }
