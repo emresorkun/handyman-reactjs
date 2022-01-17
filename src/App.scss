@@ -184,7 +184,26 @@ header {
   }
 }
 
-@media all and (max-width: 480px) {
+.d-block {
+  //height: 1000px;
+
+  border-radius: 20px;
+}
+
+.carousel-container {
+  margin-bottom: 50px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-indicators button {
+  display: none;
+}
+
+@media all and (max-width: 490px) {
   .nav-links li {
     flex-basis: 100%;
   }
@@ -240,10 +259,9 @@ header {
   .form-company-info {
     display: none;
   }
-  .footer .copyright {
-    font-size: 18px;
-    color: red;
-    margin-bottom: 13px;
+  .footer .copyright p {
+    font-size: 14px;
+    margin: 0;
   }
 }
 @media all and (max-width: 1000px) {
@@ -380,8 +398,12 @@ body {
   width: 100%;
   height: 99px;
 }
+.footer .mr-auto .nav-link {
+  padding-bottom: 0;
+  padding-top: 0.1px;
+}
 .footer .copyright {
   font-size: 18px;
   color: aliceblue;
-  margin-bottom: 13px;
+  padding-bottom: 32px;
 }
