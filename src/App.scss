@@ -67,6 +67,12 @@ ul,
 .home-photo {
   //background: #a87c60;
 }
+.home-photo-carpenter {
+  //display: none;
+  border-radius: 50%;
+  height: 500px;
+}
+
 .form-brand {
   text-align: center;
   color: #1f0704;
@@ -140,6 +146,23 @@ ul,
   .nav-links li {
     flex: 1 1 50%;
   }
+  .home-photo-carpenter {
+    //display: none;
+    border-radius: 50%;
+    height: 300px;
+  }
+  .home-introduction {
+    //display: none;
+    padding: 0;
+  }
+
+  .home-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
 }
 
 @media all and (max-width: 480px) {
@@ -162,9 +185,10 @@ ul,
     padding: 0;
   }
 
-  .img {
+  .home-photo-carpenter {
     //display: none;
     border-radius: 50%;
+    height: 250px;
   }
 
   // header {
