@@ -75,6 +75,7 @@ function ContactForm() {
               } catch {
                 console.log("failed");
               }
+              alert("Your message recieved by the carpenter!");
               //
               await addDoc(contactsCollectionRef, values);
             }}

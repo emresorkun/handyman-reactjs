@@ -6,7 +6,6 @@ import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
 import { useUser } from "../context/userContext";
 
-
 const ContactsSchema = Yup.object().shape({
   firstName: Yup.string()
     .min(2, "Too Short!")
@@ -79,15 +78,14 @@ function ContactForm() {
             onSubmit={async (values) => {
               try {
                 console.log("tried");
-                
               } catch {
                 console.log("failed");
               }
               //
               console.log(values);
+              alert("Your message recieved by the carpenter!");
               await addDoc(contactsCollectionRef, values);
               //
-            
             }}
           >
             {({ errors, touched }) => (
