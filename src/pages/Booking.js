@@ -164,7 +164,7 @@ function ContactForm() {
                         <div className="errors-input">{errors.message}</div>
                       ) : null}
                     </p> */}
-
+                  <div></div>
                   <p className="full">
                     <label
                       htmlFor="message"
@@ -205,7 +205,6 @@ function ContactForm() {
                       <div className="errors-input">{errors.message}</div>
                     ) : null}
                   </p>
-
                   <p className="full">
                     <button type="submit" onClick={createContact}>
                       Submit
