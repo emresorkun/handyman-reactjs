@@ -11,6 +11,7 @@ const Home = () => {
       <div className="home-container">
         <div className="home-wrapper">
           <div className="home-introduction">
+            TEST
             Tahtadan Dukkan is an Ankara based woodworking company that provides
             mid to high end custom woodworking. We specialize in building solid
             furniture and cabinetry using only the best materials and joinery
