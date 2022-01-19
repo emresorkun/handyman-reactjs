@@ -15,7 +15,7 @@ const CommentsSchema = Yup.object().shape({
   lastName: Yup.string().min(2, "Too Short!").max(30, "Too Long!"),
   comment: Yup.string()
     .min(5, "Comments should be longer (min 5 characters..)")
-    .max(155, "Too Long!")
+    .max(355, "Too Long!")
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
   // phoneNumber: Yup.number()
