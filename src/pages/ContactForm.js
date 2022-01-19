@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import { db } from "../firebase/config";
-import { doc, setDoc } from "firebase/firestore";
+//import { doc, setDoc } from "firebase/firestore";
 import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
-import { useUser } from "../context/userContext";
+//import { useUser } from "../context/userContext";
 
 const ContactsSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -47,8 +47,8 @@ function ContactForm() {
     //console.log(createContact().then((e) => console.log(e)));
     //yukardaki console=>ne oluyor anlamak icin
   }, []);
-  const user = useUser();
-  const isUser = user.isUser;
+  // const user = useUser();
+  // const isUser = user.isUser;
 
   return (
     <>
