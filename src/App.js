@@ -7,7 +7,6 @@ import Booking from "./pages/Booking";
 import Comments from "./pages/Comments";
 import ContactForm from "./pages/ContactForm";
 import Home from "./pages/Home";
-import SingleWork from "./pages/SingleWork";
 import Works from "./pages/Works";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
@@ -30,7 +29,6 @@ function App() {
               <Route exact path="/comments" element={<Comments />} />
               <Route exact path="/contact-form" element={<ContactForm />} />
               <Route exact path="/works" element={<Works />} />
-              <Route exact path="/works/test" element={<SingleWork />} />
               <Route element={<PageNotFound />} />
             </Routes>
           </div>
