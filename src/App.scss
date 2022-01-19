@@ -34,13 +34,11 @@
 }
 
 .form-company-info {
-  //background: #c76e32;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .home-introduction {
-  //background: #c76e32;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -68,11 +66,8 @@ ul,
   text-align: center;
   align-items: center;
 }
-.home-photo {
-  //background: #a87c60;
-}
+
 .home-photo-carpenter {
-  //display: none;
   border-radius: 50%;
   height: 500px;
 }
@@ -189,7 +184,6 @@ header {
 }
 
 .d-block {
-
   border-radius: 20px;
 }
 
@@ -228,22 +222,13 @@ header {
   .home-photo-carpenter {
     //display: none;
     border-radius: 50%;
-    height: 250px;
+    height: 230px;
   }
 
-  // header {
-  //   border-radius: 8px;
-  //   display: flex;
-  //   text-align: center;
-  //   //color: rgba(0, 0, 0, 0.55);
-  //   box-shadow: 0 0 10px 0 rgba(72, 94, 116, 0.7);
-  //   //background-color: #1f0704;
-  //   //box-shadow: 0 0 20px 0 #1f0704;
-  //   place-items: center;
-  //   align-items: center;
-  //   padding: 8px 0px;
-  //   margin: 150px;
-  // }
+  .home-photo {
+    //display: none;
+    padding: 3px;
+  }
 
   .logo-wrapper {
     margin: auto;
@@ -265,6 +250,15 @@ header {
     font-size: 12px;
     margin: 0;
     margin-bottom: 6px;
+  }
+
+  .carousel-container {
+    //height: 200px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  .carousel-container-test {
+    height: 350px;
   }
 }
 @media all and (max-width: 1000px) {

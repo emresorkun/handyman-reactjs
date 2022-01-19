@@ -75,7 +75,7 @@ li {
 }
 
 main .wrapper {
-  padding: 50px 15px;
+  padding: 50px 15px 100px;
 }
 
 .post-container {
@@ -84,10 +84,11 @@ main .wrapper {
 }
 .post {
   flex-grow: 1;
+  border-radius: 10px;
   width: 45%;
   height: auto;
   padding: 50px;
-  //margin-bottom: 50px;
+  //margin-bottom: 650px;
   margin: 10px;
   background-color: #a87c60;
   box-shadow: 10px 20px 20px 10px #1f0704;
