@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { useUser } from "../context/userContext";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 function Login() {
   // const [registerEmail, setRegisterEmail] = useState("");
@@ -43,25 +44,44 @@ function Login() {
 
   return (
     <div className="App">
-      <div className="admin-login">
-        <h3> Login </h3>
-        <input
-          placeholder="Email..."
-          onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-        />
-        <input
-          placeholder="Password..."
-          onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-        />
-
-        <button onClick={login}> Login</button>
-        {user?.email + " in the house"}
-
-        <button onClick={logout}> Sign Out </button>
+      <div className="container-login">
+        <div class="wrapper">
+          <div class="container-title">
+            <span>Admin Login</span>
+          </div>
+          <div class="container-row">
+            <i>
+              <UserOutlined />
+            </i>
+            <input
+              placeholder="Email..."
+              onChange={(event) => {
+                setLoginEmail(event.target.value);
+              }}
+            />
+          </div>
+          <div class="container-row">
+            <i>
+              <LockOutlined />
+            </i>
+            <input
+              type="password"
+              placeholder="Password..."
+              onChange={(event) => {
+                setLoginPassword(event.target.value);
+              }}
+            />
+          </div>
+          <div className="login-button">
+            <button onClick={login}> Login</button>
+          </div>
+          <div className="login-button">
+            <button onClick={logout}> Sign Out </button>
+          </div>
+          {user?.email && (
+            <div className="logged-in"> {user?.email} in the house</div>
+          )}
+        </div>
       </div>
     </div>
   );

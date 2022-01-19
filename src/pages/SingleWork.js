@@ -165,14 +165,13 @@ function ContactForm() {
                       <Field id="time" name="time" type="time" rows="5" />
                     </p>
 
-                    <p className="full">
-                      <button type="submit" onClick={createContact}>
-                        Submit
-                      </button>
-                    </p>
-                  </div>
-                </Form>
-              </div>
+                  <p className="full">
+                    <button type="submit" onClick={createContact}>
+                      Submit
+                    </button>
+                  </p>
+                </div>
+              </Form>
             )}
             {/* </div> */}
           </Formik>

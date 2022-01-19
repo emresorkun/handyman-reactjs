@@ -6,6 +6,7 @@ import "antd/dist/antd.css";
 import { List } from "antd";
 import { doc, deleteDoc, updateDoc, onSnapshot } from "firebase/firestore";
 import { useUser } from "../context/userContext";
+import { DeleteOutlined } from "@ant-design/icons";
 
 export default function ContactsPrint() {
   const [contacts, setContacts] = useState([]);
@@ -63,7 +64,6 @@ export default function ContactsPrint() {
   const user = useUser();
   const isUser = user.isUser;
   console.log(isUser);
-  
 
   return (
     <>
@@ -93,7 +93,9 @@ export default function ContactsPrint() {
                 }}
               />
               {isUser && (
-                <button onClick={() => deleteContact(item.id)}>X</button>
+                <button onClick={() => deleteContact(item.id)}>
+                  <DeleteOutlined />
+                </button>
               )}
             </List.Item>
           )}

@@ -13,6 +13,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import { UserProvider } from "./context/userContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           </div>
         </div>
       </UserProvider>
+      <Footer />
     </Router>
   );
 }

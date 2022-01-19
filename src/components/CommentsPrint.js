@@ -11,6 +11,7 @@ import { db } from "../firebase/config";
 import "antd/dist/antd.css";
 import { Card, List } from "antd";
 import { useUser } from "../context/userContext";
+import { DeleteOutlined } from "@ant-design/icons";
 
 export default function CommentsPrint() {
   const [comments, setComments] = useState([]);
@@ -98,7 +99,9 @@ export default function CommentsPrint() {
                     <div>{item.comment}</div>
                   </Card>
                   {isUser && (
-                    <button onClick={() => deleteComment(item.id)}>X</button>
+                    <button onClick={() => deleteComment(item.id)}>
+                      <DeleteOutlined />
+                    </button>
                   )}
                 </div>
               </div>
