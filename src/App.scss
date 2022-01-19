@@ -189,7 +189,6 @@ header {
 }
 
 .d-block {
-  //height: 1000px;
 
   border-radius: 20px;
 }
@@ -263,8 +262,9 @@ header {
     display: none;
   }
   .footer .copyright p {
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
+    margin-bottom: 6px;
   }
 }
 @media all and (max-width: 1000px) {
@@ -407,9 +407,9 @@ body {
   padding-top: 0.1px;
 }
 .footer .copyright {
-  font-size: 18px;
+  font-size: 14px;
   color: aliceblue;
-  padding-bottom: 32px;
+  padding-bottom: 5px;
 }
 .container-login {
   max-width: 440px;
@@ -451,7 +451,6 @@ body {
   border: 1px solid lightgrey;
   font-size: 16px;
   transition: all 0.3s ease;
-  
 }
 .container-row input:focus {
   border-color: #c76e32;
@@ -471,7 +470,7 @@ body {
   justify-content: center;
 }
 
-.login-button input:hover{
+.login-button input:hover {
   background: #c76e32;
 }
 
@@ -484,14 +483,14 @@ body {
   text-align: center;
   margin-top: 20px;
   font-size: 17px;
+  border-radius: 5px;
 }
 
-.login-button button{
+.login-button button {
   color: #1f0704;
   background: #c76e32;
   border: 1px solid #c76e32;
   text-align: center;
-  margin-top: 20px;
   font-size: 17px;
 }
 
