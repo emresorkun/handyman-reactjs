@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 export default function Navibar() {
   const [expanded, setExpanded] = useState(false);
+
+  //instead of Nav.Link Nav.Item used to avoid warning
   return (
     <Navbar expanded={expanded} fixed="top" expand="lg" variant="dark">
       <Navbar.Toggle
@@ -12,45 +14,41 @@ export default function Navibar() {
       />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="m-auto">
-          <Nav.Link onClick={() => setExpanded(false)}>
+          <Nav.Item onClick={() => setExpanded(false)} ele>
             <Link className="nav-link" to="/">
               Home
             </Link>
-          </Nav.Link>
-          <Nav.Link onClick={() => setExpanded(false)}>
+          </Nav.Item>
+          <Nav.Item onClick={() => setExpanded(false)} ele>
             <Link className="nav-link" to="works">
               Portfolio
             </Link>
-          </Nav.Link>
-          <Nav.Link onClick={() => setExpanded(false)}>
+          </Nav.Item>
+          <Nav.Item onClick={() => setExpanded(false)} ele>
             <Link className="nav-link" to="comments">
               Comments
             </Link>
-          </Nav.Link>
-          <Nav.Link onClick={() => setExpanded(false)}>
+          </Nav.Item>
+          <Nav.Item onClick={() => setExpanded(false)} ele>
             <Link className="nav-link" to="contact-form">
               Contact Form
             </Link>
-          </Nav.Link>
-          <Nav.Link onClick={() => setExpanded(false)}>
+          </Nav.Item>
+          <Nav.Item onClick={() => setExpanded(false)} ele>
             <Link className="nav-link" to="bookings">
               Booking Form
             </Link>
-          </Nav.Link>
-          <Nav.Link onClick={() => setExpanded(false)}>
+          </Nav.Item>
+          <Nav.Item onClick={() => setExpanded(false)} ele>
             <Link className="nav-link" to="admin">
               Admin
             </Link>
-          </Nav.Link>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
   );
 }
-
-
-
 
 // import React from "react";
 // import { Nav, Navbar } from "react-bootstrap";
