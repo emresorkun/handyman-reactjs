@@ -266,14 +266,10 @@ header {
     flex-basis: 100%;
   }
   .home-wrapper {
-    //YAZ
     flex-wrap: wrap;
   }
-  .home-wrapper img {
-    //display: none;
-  }
 }
-//FORM
+
 @media (min-width: 800px) {
   .form-wrapper {
     display: grid;
@@ -322,7 +318,6 @@ body {
   background-image: url(./images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  //background-position: center 200px;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -341,27 +336,6 @@ body {
   font-weight: 1000;
   font-size: 18px;
 }
-
-// .home-container {
-//   display: flex;
-//   //place-items: center;
-//   flex-direction: row;
-//   padding: 40px;
-//   margin: 0;
-//   width: 100%;
-// }
-// .home-introduction {
-//   color: rgb(56, 21, 211);
-//   font-weight: 1000;
-//   font-size: 24px;
-//   padding: 50px;
-// }
-// .home-photo {
-//   place-items: center;
-// }
-// .home-photo img {
-//   padding: 50px;
-// }
 
 .datepicker-container {
   display: flex;
