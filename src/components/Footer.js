@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import {
   InstagramOutlined,
   FacebookOutlined,
@@ -43,7 +42,7 @@ const Footer = () => (
         </a>
       </Nav>
       <div className="copyright">
-        <p>Copyright © 2022 Tahtadan Dukkan - All Rights Reserved.</p>
+        <p>Copyright © 2022 T.D - All Rights Reserved.</p>
       </div>
     </div>
   </div>

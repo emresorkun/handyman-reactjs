@@ -16,7 +16,8 @@ const Home = () => {
             furniture and cabinetry using only the best materials and joinery
             techniques. Custom kitchens cabinets, bathroom vanities, tables,
             consoles and built-ins are our's specialties. We speak English and
-            Turkish and we mainly serve to internatinaol community in Ankara.
+            Turkish and we mainly serve to the ex-pat community and international govermental
+            organizations based in Ankara.
             Please get in contact with us for more details and our references.
           </div>
           <div className="home-photo">

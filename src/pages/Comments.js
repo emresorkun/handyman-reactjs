@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Formik, Field, Form } from "formik";
 import CommentsPrint from "../components/CommentsPrint";
 import { db } from "../firebase/config";
-import { doc, setDoc } from "firebase/firestore";
 import * as Yup from "yup";
 import { collection, addDoc } from "firebase/firestore";
 import { useUser } from "../context/userContext";
@@ -172,7 +171,6 @@ function Comments() {
                 </Form>
               </div>
             )}
-            {/* </div> */}
           </Formik>
         </div>
       </div>

@@ -1,10 +1,4 @@
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  onSnapshot,
-} from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
@@ -12,22 +6,13 @@ import "antd/dist/antd.css";
 import { Card, List } from "antd";
 import { useUser } from "../context/userContext";
 import { DeleteOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
+import { Button } from "antd";
 
 export default function CommentsPrint() {
   const [comments, setComments] = useState([]);
-  //ask to RAKIP
   const [adminButton, setadminButton] = useState("display");
   const commentsCollectionRef = collection(db, "comments");
-
-  // useEffect(() => {
-  //   const getComments = async () => {
-  //     const data = await getDocs(commentsCollectionRef);
-  //     setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //     console.log(comments);
-  //   };
-
-  //   getComments();
-  // }, []);
 
   useEffect(
     () =>
@@ -99,9 +84,18 @@ export default function CommentsPrint() {
                     <div>{item.comment}</div>
                   </Card>
                   {isUser && (
-                    <button onClick={() => deleteComment(item.id)}>
-                      <DeleteOutlined />
-                    </button>
+                    <div>
+                      {/* // <button onClick={() => deleteComment(item.id)}>
+                    //   <DeleteOutlined />
+                    // </button> */}
+                      <Button
+                        danger
+                        type="primary"
+                        shape="round"
+                        icon={<DeleteOutlined />}
+                        onClick={() => deleteComment(item.id)}
+                      />
+                    </div>
                   )}
                 </div>
               </div>

@@ -1,39 +1,17 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import "antd/dist/antd.css";
 import { List } from "antd";
-import { doc, deleteDoc, updateDoc, onSnapshot } from "firebase/firestore";
+import { doc, deleteDoc, onSnapshot } from "firebase/firestore";
 import { useUser } from "../context/userContext";
 import { DeleteOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
+import { Button } from "antd";
 
 export default function ContactsPrint() {
   const [contacts, setContacts] = useState([]);
-  //ask to RAKIP
-
-  //const contactsCollectionRef = collection(db, "contacts");
-
-  // const deleteContact = async (id) => {
-  //   contactsCollectionRef
-  //     .doc(id)
-  //     .console.log(id)
-  //     .delete()
-  //     .then((result) => {
-  //       console.log("Document successfully deleted!");
-  //     })
-  //     .catch((err) => {
-  //       console.error("Error removing document");
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   const getContacts = async () => {
-  //     const data = await getDocs(contactsCollectionRef);
-  //     setContacts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   getContacts();
-  // }, []);
 
   useEffect(
     () =>
@@ -69,7 +47,7 @@ export default function ContactsPrint() {
     <>
       <header>
         <div className="logo-wrapper">
-          <span className="logo">Master, Here are the contact forms!</span>
+          <span className="logo">Contact Forms</span>
         </div>
       </header>
       <div>
@@ -79,11 +57,13 @@ export default function ContactsPrint() {
           renderItem={(item) => (
             <List.Item>
               <List.Item.Meta
-                avatar={item.email}
                 title={
-                  <h6>
-                    {item.firstName} {item.lastName} - {item.phoneNumber}
-                  </h6>
+                  <div>
+                    <h6>
+                      {item.firstName} {item.email}
+                    </h6>
+                    <h6>{item.phoneNumber}</h6>
+                  </div>
                 }
                 description={item.message}
                 style={{
@@ -93,9 +73,18 @@ export default function ContactsPrint() {
                 }}
               />
               {isUser && (
-                <button onClick={() => deleteContact(item.id)}>
-                  <DeleteOutlined />
-                </button>
+                <div>
+                  {/* <button onClick={() => deleteContact(item.id)}>
+                    <DeleteOutlined />
+                  </button> */}
+                  <Button
+                    danger
+                    type="primary"
+                    shape="round"
+                    icon={<DeleteOutlined />}
+                    onClick={() => deleteContact(item.id)}
+                  />
+                </div>
               )}
             </List.Item>
           )}
