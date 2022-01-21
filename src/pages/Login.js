@@ -76,7 +76,7 @@ function Login() {
             <button onClick={login}> Login</button>
           </div>
           <div className="login-button">
-            <button onClick={logout}> Sign Out </button>
+            <button onClick={logout}> Log Out </button>
           </div>
           {user?.email && (
             <div className="logged-in"> {user?.email} in the house</div>
