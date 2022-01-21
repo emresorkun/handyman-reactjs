@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 .home-container {
   max-width: 1170px;
@@ -136,15 +137,10 @@ ul,
   transition: background-color 1s ease-out;
 }
 header {
-  // height: 60px;
-  // line-height: 60px;
   text-align: center;
   border-radius: 18px;
-  // color: rgba(0, 0, 0, 0.55);
-  //box-shadow: 0 0 10px 0 rgba(72, 94, 116, 0.7);
   background-color: #1f0704;
   box-shadow: 0 0 20px 0 #1f0704;
-  //display: grid;
   place-items: center;
   align-items: center;
   padding: 8px 0px;
@@ -289,11 +285,13 @@ header {
 .container {
   display: flex;
   flex-direction: column;
-  height: 2500px;
+  height: 1800px;
+  
 }
 
 .container-routes {
   margin-top: 1px;
+  //height: auto;
 }
 
 .mr-auto {

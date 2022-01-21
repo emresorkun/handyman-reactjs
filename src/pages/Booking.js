@@ -32,7 +32,7 @@ function createContact() {
 function ContactForm() {
   useEffect(() => {
     const createContact = async (values) => {
-      await addDoc(contactsCollectionRef, values);
+      await addDoc(collection(db, "contacts"), values);
     };
     createContact();
   }, []);
@@ -76,7 +76,7 @@ function ContactForm() {
               }
               alert("Your message recieved by the carpenter!");
               //
-              await addDoc(contactsCollectionRef, values);
+              await addDoc(collection(db, "contacts"), values);
             }}
           >
             {({ errors, touched }) => (

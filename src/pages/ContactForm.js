@@ -38,7 +38,7 @@ function ContactForm() {
   useEffect(() => {
     const createContact = async (values) => {
       //BURAYA DIKKAT!
-      await addDoc(contactsCollectionRef, values);
+      await addDoc(collection(db, "contacts"), values);
 
       console.log(values);
     };
@@ -59,7 +59,6 @@ function ContactForm() {
       </header>
       <div className="form-container">
         <div className="form-wrapper">
-          
           <div className="form-company-info">
             <ul>
               <li>Birlik, 410. Sk., 06610 Çankaya/Ankara</li>
@@ -85,7 +84,7 @@ function ContactForm() {
               //
               console.log(values);
               alert("Your message recieved by the carpenter!");
-              await addDoc(contactsCollectionRef, values);
+              await addDoc(collection(db, "contacts"), values);
               //
             }}
           >

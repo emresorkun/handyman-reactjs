@@ -32,7 +32,7 @@ function createComment() {
 function Comments() {
   useEffect(() => {
     const createComment = async (values) => {
-      await addDoc(commentsCollectionRef, values);
+      await addDoc(collection(db, "comments"), values);
     };
 
     //console.log(createComment().then((e) => console.log(e)));
@@ -65,7 +65,7 @@ function Comments() {
             }}
             validationSchema={CommentsSchema}
             onSubmit={async (values) => {
-              await addDoc(commentsCollectionRef, values);
+              await addDoc(collection(db, "comments"), values);
             }}
           >
             {({ errors, touched }) => (
