@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 const Home = () => {
   return (
     <>
-      <header>
+      <header style={{display: "none"}}>
         <div className="logo-wrapper">
           <span className="logo">Our Services</span>
         </div>

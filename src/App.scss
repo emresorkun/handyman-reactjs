@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
   padding: 1em;
+  padding-top: 120px;
 }
 .home-wrapper > * {
   padding: 1em;
@@ -188,6 +189,7 @@ header {
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .carousel-indicators button {
@@ -201,9 +203,6 @@ header {
   .home-wrapper {
     flex-wrap: wrap;
     padding: 0;
-    //flex-direction: column;
-    //YAZ
-    //background-image: url(./images/home.jpeg);
   }
 
   .home-introduction {
@@ -215,13 +214,11 @@ header {
   }
 
   .home-photo-carpenter {
-    //display: none;
     border-radius: 50%;
     height: 230px;
   }
 
   .home-photo {
-    //display: none;
     padding: 3px;
   }
 
@@ -234,7 +231,6 @@ header {
     flex-wrap: wrap;
   }
   .form-contact-input {
-    //margin-left: 10px;
     place-content: center;
   }
   .footer,
