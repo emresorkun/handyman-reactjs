@@ -9,9 +9,6 @@ import {
 const Footer = () => (
   <div className="footer">
     <div className="w-responsive text-center mx-auto p-3 mt-2">
-      {/* <div className="social-header">
-        <h4>Social</h4>
-      </div> */}
       <Nav className="mr-auto">
         <a
           target="_blank"

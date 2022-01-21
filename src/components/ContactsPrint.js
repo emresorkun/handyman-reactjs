@@ -21,13 +21,6 @@ export default function ContactsPrint() {
     []
   );
 
-  // const test = async (id, phoneNumber) => {
-
-  //   const commentDoc = doc(db, "contacts", id);
-  //   const newFields = { phoneNumber: phoneNumber + 100000 };
-  //   await updateDoc(commentDoc, newFields);
-  // };
-
   const deleteContact = async (id) => {
     const commentDoc = doc(db, "contacts", id);
     await deleteDoc(commentDoc)
@@ -74,9 +67,6 @@ export default function ContactsPrint() {
               />
               {isUser && (
                 <div>
-                  {/* <button onClick={() => deleteContact(item.id)}>
-                    <DeleteOutlined />
-                  </button> */}
                   <Button
                     danger
                     type="primary"

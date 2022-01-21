@@ -85,9 +85,6 @@ export default function CommentsPrint() {
                   </Card>
                   {isUser && (
                     <div>
-                      {/* // <button onClick={() => deleteComment(item.id)}>
-                    //   <DeleteOutlined />
-                    // </button> */}
                       <Button
                         danger
                         type="primary"
